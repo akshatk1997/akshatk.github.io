@@ -8,6 +8,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
     { id: 'hero', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'projects', label: 'Projects' },
+    { id: 'certifications', label: 'Credentials' },
     { id: 'playground', label: 'Playground' },
     { id: 'contact', label: 'Contact' },
   ];

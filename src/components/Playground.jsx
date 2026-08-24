@@ -190,7 +190,22 @@ export default function Playground() {
               <div className="flex-1 space-y-1">
                 <div className="flex justify-between items-center text-xs font-semibold text-slate-600 dark:text-slate-400 select-none">
                   <span>Acoustic Chill Instrumental</span>
-                  <span className="font-light italic text-[10px] text-rose-500">Muted by default</span>
+                  {isPlaying ? (
+                    <div className="flex items-end gap-[2px] h-3 select-none pr-1">
+                      {[...Array(4)].map((_, i) => (
+                        <div 
+                          key={i} 
+                          style={{
+                            animationDelay: `${i * 0.12}s`,
+                            animationDuration: `${0.6 + (i % 3) * 0.15}s`
+                          }}
+                          className="w-[2px] rounded-full bg-rose-500 animate-eq-bar"
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <span className="font-light italic text-[10px] text-rose-500">Muted by default</span>
+                  )}
                 </div>
                 <div className="flex items-center gap-2">
                   <button 

@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
+import Certifications from './components/Certifications';
 import Playground from './components/Playground';
 import Contact from './components/Contact';
 import { portfolioConfig } from './portfolio.config';
@@ -56,7 +57,7 @@ export default function App() {
 
   // Section scroll-spy using IntersectionObserver (buttery smooth compositor thread calculations)
   useEffect(() => {
-    const sections = ['hero', 'about', 'projects', 'playground', 'contact'];
+    const sections = ['hero', 'about', 'projects', 'certifications', 'playground', 'contact'];
     
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
@@ -121,6 +122,7 @@ export default function App() {
         <Hero />
         <About />
         <Projects />
+        <Certifications />
         <Playground />
         <Contact />
       </main>

@@ -10,6 +10,26 @@ export const portfolioConfig = {
     avatarPlaceholder: "✨", // Emoji or short symbol representing you
     email: "akshatk1997@gmail.com",
     resumeUrl: "#", // Add your resume link here
+    stats: [
+      { value: "1+", label: "Years of Experience" },
+      { value: "20+", label: "Projects & Prototypes" },
+      { value: "15+", label: "User Interviews & Tests" },
+      { value: "5+", label: "Technologies Mastered" }
+    ],
+    services: [
+      {
+        title: "AI & Data Products",
+        description: "Designing prompt behaviors, modeling tabular risk architectures, and crafting explainable analytics interfaces."
+      },
+      {
+        title: "Product Engineering",
+        description: "Translating wireframes into interactive React.js applications, building REST APIs, and automating pipelines."
+      },
+      {
+        title: "UX & Product Design",
+        description: "Conducting user research, evaluation cycles, information architecture planning, and high-fidelity layouts."
+      }
+    ]
   },
   
   about: {
@@ -137,6 +157,33 @@ export const portfolioConfig = {
     // Rain ambiance URLs (Safe public assets)
     audioSource: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" // Fallback placeholder music
   },
+
+  certifications: [
+    {
+      title: "Google UX Design Professional Certificate",
+      issuer: "Google / Coursera",
+      description: "Mastered user research methodologies, digital prototyping, usability testing, and heuristic interface evaluation.",
+      credentialUrl: "https://coursera.org"
+    },
+    {
+      title: "SAS Viya Analytics & SQL Specialist",
+      issuer: "SAS Institute",
+      description: "Credential in querying complex databases, dataset modeling, and performing machine learning on SAS platforms.",
+      credentialUrl: "https://sas.com"
+    },
+    {
+      title: "DeepLearning.AI Prompt Engineering",
+      issuer: "DeepLearning.AI",
+      description: "Mastery of advanced prompt designs, temperature configuration, LLM token handling, and system behaviors.",
+      credentialUrl: "https://deeplearning.ai"
+    },
+    {
+      title: "CU Analytics & Business Intelligence",
+      issuer: "Chandigarh University",
+      description: "Advanced coursework covering feature engineering, predictive models, and database telemetry.",
+      credentialUrl: "https://chandigarhuniversity.ac.in"
+    }
+  ],
 
   socials: [
     { name: "GitHub", url: "https://github.com/akshatk1997", iconName: "Github" },

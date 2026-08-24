@@ -25,34 +25,69 @@ export default function About() {
       className="py-20 px-4 md:px-6 max-w-5xl mx-auto space-y-20 border-t border-slate-100 dark:border-slate-900/50"
     >
       
-      {/* Bio and Philosophies */}
+      {/* Background and Core Expertise */}
       <div className="grid md:grid-cols-5 gap-10 items-start">
-        <div className="md:col-span-2 space-y-4">
-          <h2 className="text-3xl md:text-4xl font-serif-display font-bold text-slate-800 dark:text-white leading-tight">
-            My <span className="text-rose-500">Story</span> & Philosophy
-          </h2>
-          <p className="text-slate-600 dark:text-slate-400 font-light leading-relaxed text-sm md:text-base">
+        
+        {/* Left Column: Background */}
+        <div className="md:col-span-2 space-y-6">
+          <div className="space-y-2">
+            <span className="text-[10px] font-bold tracking-wider uppercase text-rose-550 dark:text-rose-400">My Background</span>
+            <h2 className="text-2xl md:text-3xl font-sans font-extrabold text-slate-800 dark:text-white leading-tight">
+              Education & <span className="text-rose-500">Story</span>
+            </h2>
+          </div>
+          
+          {/* Education Blocks */}
+          <div className="space-y-3.5">
+            <div className="p-4 rounded-2xl bg-slate-100/50 dark:bg-slate-900/40 border dark:border-slate-800/80">
+              <span className="text-[9px] font-bold text-rose-600 dark:text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-full">
+                2024 - 2026
+              </span>
+              <h4 className="font-bold text-xs md:text-sm text-slate-800 dark:text-white mt-2">MBA in AI & Data Science</h4>
+              <p className="text-[10px] md:text-[11px] text-slate-500 dark:text-slate-400 font-light mt-0.5">Chandigarh University, Mohali</p>
+            </div>
+            <div className="p-4 rounded-2xl bg-slate-100/50 dark:bg-slate-900/40 border dark:border-slate-800/80">
+              <span className="text-[9px] font-bold text-rose-600 dark:text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-full">
+                2019 - 2023
+              </span>
+              <h4 className="font-bold text-xs md:text-sm text-slate-800 dark:text-white mt-2">B.Tech in Computer Science & Engineering</h4>
+              <p className="text-[10px] md:text-[11px] text-slate-500 dark:text-slate-400 font-light mt-0.5">Dr. A.P.J. Abdul Kalam Technical University (AKTU)</p>
+            </div>
+          </div>
+
+          <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 font-light leading-relaxed">
             {about.bio}
           </p>
           {about.quote && (
-            <div className="pt-3 border-l-2 border-rose-500/30 dark:border-rose-500/20 pl-4 mt-5 italic text-slate-500 dark:text-slate-400 text-[11px] md:text-xs leading-relaxed select-none">
+            <div className="pt-3 border-l-2 border-rose-500/30 dark:border-rose-500/20 pl-4 italic text-slate-500 dark:text-slate-400 text-[10px] md:text-xs leading-relaxed select-none">
               "{about.quote}"
             </div>
           )}
         </div>
         
-        <div className="md:col-span-3 grid gap-4">
-          {about.philosophies.map((phil, idx) => (
-            <div key={idx} className="glass p-5 rounded-2xl border transition-all duration-300 hover:border-rose-500/20 hover:bg-white dark:hover:bg-slate-900/60 shadow-sm">
-              <h3 className="font-serif-display font-semibold text-slate-800 dark:text-white text-base md:text-lg mb-1 flex items-center gap-2">
-                <span className="text-rose-500">0{idx + 1}.</span> {phil.title}
-              </h3>
-              <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-light">
-                {phil.description}
-              </p>
-            </div>
-          ))}
+        {/* Right Column: Core Expertise */}
+        <div className="md:col-span-3 space-y-6">
+          <div className="space-y-2">
+            <span className="text-[10px] font-bold tracking-wider uppercase text-rose-550 dark:text-rose-400">How I Deliver Value</span>
+            <h2 className="text-2xl md:text-3xl font-sans font-extrabold text-slate-800 dark:text-white leading-tight">
+              Core <span className="text-rose-500">Expertise</span>
+            </h2>
+          </div>
+          
+          <div className="grid gap-4">
+            {about.philosophies.map((phil, idx) => (
+              <div key={idx} className="glass p-5 rounded-2xl border transition-all duration-300 hover:border-rose-500/20 hover:bg-white dark:hover:bg-slate-900/60 shadow-sm">
+                <h3 className="font-bold text-slate-800 dark:text-white text-xs md:text-sm mb-1.5 flex items-center gap-2">
+                  <span className="text-rose-500">0{idx + 1}.</span> {phil.title}
+                </h3>
+                <p className="text-[11px] md:text-xs text-slate-650 dark:text-slate-400 leading-relaxed font-light">
+                  {phil.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
+
       </div>
 
       {/* The Two Stacks (Tech vs Personal) */}
