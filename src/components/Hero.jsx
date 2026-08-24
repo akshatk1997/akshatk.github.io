@@ -1,156 +1,95 @@
 import React from 'react';
-import { ArrowRight, FileText, Sparkles, Code, Layout } from 'lucide-react';
+import { Sparkles, Code, Layout } from 'lucide-react';
 import { portfolioConfig } from '../portfolio.config';
-import * as Icons from 'lucide-react';
-import { scrollToSection } from '../utils/scroll';
 
 export default function Hero() {
-  const { profile, socials } = portfolioConfig;
-
-  const renderIcon = (name) => {
-    const IconComponent = Icons[name];
-    return IconComponent ? <IconComponent size={18} /> : null;
-  };
+  const { profile } = portfolioConfig;
 
   const getServiceIcon = (title) => {
     switch (title) {
       case "AI & Data Products":
-        return <Sparkles className="text-rose-500" size={18} />;
+        return <Sparkles className="w-8 h-8 text-[#4ba1a7]" />;
       case "Product Engineering":
-        return <Code className="text-amber-500" size={18} />;
+        return <Code className="w-8 h-8 text-[#4ba1a7]" />;
       case "UX & Product Design":
-        return <Layout className="text-rose-400" size={18} />;
+        return <Layout className="w-8 h-8 text-[#4ba1a7]" />;
       default:
-        return <Sparkles className="text-rose-500" size={18} />;
+        return <Sparkles className="w-8 h-8 text-[#4ba1a7]" />;
     }
-  };
-
-  const handleScrollTo = (id) => {
-    scrollToSection(id, 90);
   };
 
   return (
     <section 
       id="hero" 
-      className="min-h-screen flex flex-col justify-center items-center px-4 md:px-6 pt-32 pb-20 relative overflow-hidden animate-slide-up-fade"
+      className="w-full relative z-0 animate-slide-up-fade pt-28 sm:pt-32 pb-10 bg-white dark:bg-[#1a1625] text-gray-900 dark:text-white transition-colors duration-300"
     >
-      <div className="max-w-4xl w-full text-center space-y-12 z-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="space-y-6">
-          {/* Status Pill */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-rose-500/5 dark:bg-rose-500/10 border border-rose-500/10 dark:border-rose-500/20 text-xs md:text-sm text-rose-600 dark:text-rose-300 font-sans font-medium tracking-wide animate-float select-none shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-rose-500 dark:bg-rose-400 animate-pulse"></span>
-            <span>{profile.status}</span>
-          </div>
+        {/* Rounded Billboard Banner Card */}
+        <div 
+          className="relative rounded-[2rem] overflow-hidden min-h-[550px] sm:min-h-[600px] flex flex-col justify-between transition-all duration-500 shadow-xl"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          {/* Cover Overlay */}
+          <div className="absolute inset-0 bg-black/45 dark:bg-black/60 z-0"></div>
 
-          {/* Hero Copy */}
-          <div className="space-y-4">
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-sans font-extrabold tracking-tight text-slate-800 dark:text-white leading-tight">
-              Hi, I'm <span className="inline-block xs:whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-pink-500 to-amber-500">{profile.name}</span>
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg font-sans font-semibold uppercase tracking-wider text-rose-500 dark:text-rose-400">
+          {/* Banner Copy (Top) */}
+          <div className="relative z-10 pt-20 px-8 sm:px-16 pb-10">
+            <p className="text-white/95 text-base sm:text-lg font-mono font-bold tracking-wider mb-3 uppercase">
               {profile.title}
             </p>
+            <h1 className="text-white text-5xl sm:text-7xl md:text-[96px] font-black leading-[0.95] tracking-tighter select-none max-w-4xl">
+              Hi, I am <br className="hidden sm:inline" />{profile.name}
+            </h1>
           </div>
 
-          {/* Custom Tagline */}
-          <p className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed font-light">
-            {profile.tagline}
-          </p>
-        </div>
-
-        {/* Stats Counter Grid */}
-        {profile.stats && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto pt-4">
-            {profile.stats.map((stat, sIdx) => (
-              <div 
-                key={sIdx} 
-                className="glass p-4 rounded-2xl border border-slate-100 dark:border-slate-900/50 shadow-sm flex flex-col justify-center items-center hover:border-rose-500/10 transition-all duration-300 select-none"
-              >
-                <span className="font-extrabold text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-amber-500">
-                  {stat.value}
-                </span>
-                <span className="text-[9px] md:text-[10px] font-semibold tracking-wider text-slate-400 dark:text-slate-550 uppercase text-center mt-1">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Services / Focus Cards Grid */}
-        {profile.services && (
-          <div className="grid md:grid-cols-3 gap-5 max-w-4xl mx-auto pt-2">
-            {profile.services.map((service, sIdx) => (
-              <div 
-                key={sIdx} 
-                className="glass p-5 rounded-2xl border border-slate-100 dark:border-slate-900/50 text-left hover:border-rose-500/20 transition-all duration-300 hover:scale-[1.01] shadow-sm flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <div className="w-9 h-9 rounded-xl bg-slate-100/50 dark:bg-slate-900/60 flex items-center justify-center border dark:border-slate-800/80">
-                    {getServiceIcon(service.title)}
-                  </div>
-                  <h3 className="font-bold text-sm md:text-base text-slate-800 dark:text-white">
-                    {service.title}
-                  </h3>
-                  <p className="text-[11px] md:text-xs text-slate-500 dark:text-slate-400 font-light leading-relaxed">
-                    {service.description}
+          {/* Black Stats Container (Bottom) */}
+          <div className="relative z-10 px-4 sm:px-6 pb-6">
+            <div className="bg-black rounded-[2rem] p-6 sm:p-10 w-full grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 border border-white/5">
+              {profile.stats.map((stat, sIdx) => (
+                <div 
+                  key={sIdx} 
+                  className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-4 text-center sm:text-left select-none"
+                >
+                  <h2 className="text-white text-3xl sm:text-5xl font-extrabold">
+                    {stat.value}
+                  </h2>
+                  <p className="text-gray-400 text-[9px] sm:text-xs font-semibold tracking-wider uppercase leading-tight">
+                    {stat.label.split(' ').slice(0, 2).join(' ')}
+                    <br />
+                    {stat.label.split(' ').slice(2).join(' ')}
                   </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        )}
-
-        {/* Buttons / Actions */}
-        <div className="flex flex-wrap justify-center items-center gap-4 pt-4">
-          <button 
-            onClick={() => handleScrollTo('projects')}
-            className="px-6 py-3 rounded-full bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white font-medium text-sm flex items-center gap-2 shadow-md shadow-rose-500/20 hover:shadow-rose-500/35 transition-all duration-300 hover:-translate-y-0.5"
-          >
-            Explore Projects <ArrowRight size={16} />
-          </button>
-          
-          <button 
-            onClick={() => handleScrollTo('contact')}
-            className="px-6 py-3 rounded-full glass border hover:bg-slate-100/50 dark:hover:bg-slate-800/80 text-slate-700 dark:text-slate-200 font-medium text-sm transition-all duration-300 hover:-translate-y-0.5"
-          >
-            Let's Connect
-          </button>
-          
-          {profile.resumeUrl && profile.resumeUrl !== '#' && (
-            <a 
-              href={profile.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 rounded-full glass border hover:bg-slate-100/50 dark:hover:bg-slate-800/80 text-slate-600 dark:text-slate-300 font-medium text-sm flex items-center gap-2 transition-all duration-300 hover:-translate-y-0.5"
-            >
-              <FileText size={16} /> Resume
-            </a>
-          )}
         </div>
 
-        {/* Social Badges */}
-        <div className="flex justify-center items-center gap-4 pt-4">
-          {socials.map((social) => (
-            <a
-              key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full glass border text-slate-600 dark:text-slate-400 hover:text-rose-500 dark:hover:text-rose-400 hover:border-rose-500/30 hover:bg-rose-500/5 transition-all duration-300 hover:scale-105"
-              title={social.name}
-            >
-              {renderIcon(social.iconName)}
-            </a>
+        {/* Services Focus Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 px-4 sm:px-10">
+          {profile.services.map((service, sIdx) => (
+            <div key={sIdx} className="flex items-start gap-5 text-left">
+              <div className="p-3 bg-teal-500/10 dark:bg-teal-500/5 rounded-xl shrink-0 border dark:border-teal-500/10">
+                {getServiceIcon(service.title)}
+              </div>
+              <div className="space-y-1.5">
+                <h5 className="text-xl font-bold text-gray-900 dark:text-white">
+                  {service.title === "AI & Data Products" ? "AI & Data Products" : service.title}
+                </h5>
+                <p className="text-gray-500 dark:text-gray-400 leading-relaxed text-sm font-light">
+                  {service.description}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
 
       </div>
-
-      {/* Atmospheric Blur Blobs */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-rose-500/10 dark:bg-rose-500/5 blur-3xl -z-10 pointer-events-none animate-pulse-slow"></div>
-      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-72 h-72 rounded-full bg-amber-500/10 dark:bg-amber-500/5 blur-3xl -z-10 pointer-events-none animate-pulse-slow"></div>
     </section>
   );
 }

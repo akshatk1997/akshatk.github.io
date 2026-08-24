@@ -33,173 +33,145 @@ export default function Contact() {
   return (
     <section 
       id="contact" 
-      className="py-20 px-4 md:px-6 max-w-5xl mx-auto space-y-12 border-t border-slate-100 dark:border-slate-900/50"
+      className="w-full relative z-0 border-none m-0 p-0"
     >
-      
-      <div className="text-center space-y-3 select-none">
-        <span className="text-[10px] font-bold tracking-wider uppercase text-rose-550 dark:text-rose-400">Get in Touch</span>
-        <h2 className="text-3xl md:text-4xl font-sans font-extrabold text-slate-800 dark:text-white">
-          Write Me a <span className="text-rose-500">Letter</span>
-        </h2>
-        <p className="text-slate-600 dark:text-slate-400 font-light leading-relaxed max-w-md mx-auto text-sm md:text-base">
-          Have an idea, a job proposal, or just want to share a virtual coffee? Drop me a note below.
-        </p>
-      </div>
-
-      <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-        
-        {/* Left Column: Form & Direct Contact */}
-        <div className="space-y-6 flex flex-col justify-between">
+      <div className="bg-gradient-to-b from-indigo-50/50 to-pink-50 dark:from-[#1a1625] dark:to-[#2a1b38] flex items-center justify-center py-24 md:py-32 px-6 transition-colors duration-300">
+        <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8 items-center">
           
-          <form 
-            onSubmit={handleSubmit}
-            className="relative overflow-hidden rounded-3xl border border-slate-200/80 dark:border-slate-800/80 bg-[#fefefe] dark:bg-slate-950 p-6 md:p-8 shadow-sm space-y-6 flex-1 flex flex-col justify-between"
-          >
-            {/* Air Mail Stamp Graphic */}
-            <div className="absolute right-6 top-6 w-14 h-18 border border-dashed border-rose-500/20 dark:border-rose-500/10 rounded flex flex-col items-center justify-center p-1 select-none pointer-events-none rotate-6">
-              <span className="text-xl">💌</span>
-              <span className="text-[6px] font-bold uppercase tracking-widest text-rose-500/35 dark:text-rose-500/25 mt-0.5 font-mono">Air Mail</span>
-            </div>
+          {/* Left Column: Heading and Contact Copier */}
+          <div className="space-y-6 text-left">
+            <h4 className="text-sm font-bold tracking-widest uppercase text-zinc-900 dark:text-zinc-300 select-none">
+              Quick Contact
+            </h4>
+            <h1 className="text-5xl md:text-7xl font-extrabold text-zinc-900 dark:text-white leading-[1.1] tracking-tight select-none">
+              Leave a<br />Message
+            </h1>
+            <p className="text-zinc-550 dark:text-zinc-400 max-w-sm text-lg pt-4 leading-relaxed font-light">
+              Have a project in mind, a question, or just want to say hi? I'd love to hear from you. Drop a message and I'll get back to you!
+            </p>
 
-            <div className="space-y-6">
-              <div className="font-serif-display text-base md:text-lg text-slate-800 dark:text-slate-200 italic border-b border-slate-100 dark:border-slate-900 pb-2 select-none">
-                Dear {profile.name.split(' ')[0]},
-              </div>
-
-              <div className="space-y-5 text-xs md:text-sm">
-                <div className="flex flex-wrap items-baseline gap-2">
-                  <span className="text-slate-500 dark:text-slate-400 font-light select-none">My name is</span>
-                  <input 
-                    type="text" 
-                    placeholder="Your Name"
-                    value={visitorName}
-                    onChange={(e) => setVisitorName(e.target.value)}
-                    className="bg-transparent border-b border-slate-200 dark:border-slate-800 focus:border-rose-500 dark:focus:border-rose-500 outline-none px-1 py-0.5 text-slate-800 dark:text-white font-medium min-w-[130px] transition-colors"
-                    required
-                  />
-                  <span className="text-slate-500 dark:text-slate-400 font-light select-none">and you can reply at</span>
-                  <input 
-                    type="email" 
-                    placeholder="your.email@example.com"
-                    value={visitorEmail}
-                    onChange={(e) => setVisitorEmail(e.target.value)}
-                    className="bg-transparent border-b border-slate-200 dark:border-slate-800 focus:border-rose-500 dark:focus:border-rose-500 outline-none px-1 py-0.5 text-slate-800 dark:text-white font-medium min-w-[180px] transition-colors"
-                    required
-                  />
-                  <span className="text-slate-500 dark:text-slate-400 font-light select-none">.</span>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-slate-500 dark:text-slate-400 font-light block select-none">Here is what I wanted to write:</label>
-                  <textarea 
-                    placeholder="I'd love to collaborate on a design / discuss a project / say hello..."
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    rows="5"
-                    className="w-full bg-transparent border border-slate-100 dark:border-slate-900 focus:border-rose-500/40 dark:focus:border-rose-500/40 rounded-xl p-3 outline-none text-slate-800 dark:text-white font-light resize-none transition-all leading-relaxed"
-                    required
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-900 select-none">
-              <div className="flex items-center gap-1.5 text-xs text-slate-400 dark:text-slate-500">
-                <span>With sincerity,</span>
-                <Heart size={10} className="text-rose-500 animate-pulse" />
-              </div>
-              
-              <button
-                type="submit"
-                disabled={submitted}
-                className="px-5 py-2.5 rounded-full bg-rose-500 hover:bg-rose-600 dark:bg-rose-600 dark:hover:bg-rose-700 text-white font-medium text-xs flex items-center gap-2 transition-all duration-300 shadow-md shadow-rose-500/10 hover:shadow-rose-500/20 hover:-translate-y-0.5 disabled:opacity-50"
-              >
-                {submitted ? "Sending..." : "Send Letter"} <Send size={12} />
-              </button>
-            </div>
-
-          </form>
-
-          {/* Contact Details Copier & Window */}
-          <div className="grid sm:grid-cols-2 gap-4 select-none">
-            <div className="glass p-5 rounded-2xl border space-y-3 flex flex-col justify-between">
-              <div>
-                <h3 className="text-xs font-bold text-slate-800 dark:text-white uppercase tracking-wider">
-                  Direct Copy
-                </h3>
-                <p className="text-[10px] text-slate-400 dark:text-slate-500 font-light mt-1">
-                  Copy email directly to your clipboard.
-                </p>
-              </div>
-              <div className="flex items-center justify-between bg-slate-100/50 dark:bg-slate-900/60 p-2.5 rounded-xl border dark:border-slate-800/80">
-                <span className="text-[10px] font-medium text-slate-650 dark:text-slate-300 truncate mr-2 select-all font-mono">
+            <div className="pt-8 select-none">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">
+                Direct Copy
+              </span>
+              <div className="flex items-center justify-between bg-white/70 dark:bg-zinc-800/40 backdrop-blur-md border border-zinc-200 dark:border-zinc-700/50 p-3 rounded-2xl max-w-sm shadow-sm">
+                <span className="text-xs font-mono font-bold text-gray-800 dark:text-gray-200 truncate mr-3 select-all">
                   {profile.email}
                 </span>
                 <button
                   onClick={handleCopyEmail}
-                  className="p-1.5 rounded-lg bg-white dark:bg-slate-800 hover:bg-rose-500/5 hover:text-rose-500 text-slate-400 border dark:border-slate-700/60 dark:border-slate-800 transition-all duration-300 flex items-center justify-center shadow-sm select-none"
+                  className="p-2 rounded-xl bg-gray-100 dark:bg-zinc-900 hover:bg-[#ff4d8d]/10 hover:text-[#ff4d8d] text-gray-400 border dark:border-zinc-800 transition-all duration-300 shadow-sm flex items-center justify-center shrink-0"
                   title="Copy Email"
                 >
-                  {copied ? <Check size={11} className="text-rose-500" /> : <Copy size={11} />}
+                  {copied ? <Check size={13} className="text-[#ff4d8d]" /> : <Copy size={13} />}
                 </button>
               </div>
             </div>
+          </div>
 
-            <div className="glass p-5 rounded-2xl border space-y-2">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-rose-550 dark:text-rose-400">Response Window</span>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed font-light">
-                Based in India (GMT+5:30). Typically active 9:00 AM - 8:00 PM. I read every note and reply within 24 hours.
-              </p>
-            </div>
+          {/* Right Column: The Stationery Letter Form */}
+          <div className="bg-transparent">
+            <form 
+              onSubmit={handleSubmit}
+              className="relative overflow-hidden rounded-[2.5rem] border border-[#ebdca2]/40 dark:border-[#2e2b20] bg-[#fcf9f1] dark:bg-[#171612] p-8 md:p-10 shadow-lg space-y-6 text-left flex flex-col justify-between min-h-[420px]"
+            >
+              {/* Airmail border striping (subtle) */}
+              <div className="absolute inset-0 border-[6px] border-transparent bg-clip-content bg-gradient-to-r from-red-500/10 via-transparent to-blue-500/10 pointer-events-none" />
+              
+              {/* Stamp and Postmark */}
+              <div className="absolute right-8 top-8 flex flex-col items-center">
+                <div className="w-12 h-14 bg-[#eedda2]/20 dark:bg-[#eedda2]/5 border border-dashed border-[#c2b98f] dark:border-[#383526] rounded flex items-center justify-center text-lg select-none rotate-6">
+                  ✨
+                </div>
+                {/* Circular Postmark */}
+                <div className="absolute w-16 h-16 border border-[#993b27]/20 dark:border-[#d1705b]/15 rounded-full -top-1 -right-1 flex items-center justify-center rotate-45 select-none pointer-events-none">
+                  <span className="text-[5px] text-[#993b27]/30 dark:text-[#d1705b]/25 font-bold uppercase tracking-widest font-mono">GURUGRAM • IN</span>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="font-serif-display text-lg text-[#3a3523] dark:text-[#ebdca2] italic border-b border-[#eedda2]/45 dark:border-[#2b281f] pb-2 select-none">
+                  Dear {profile.name.split(' ')[0]},
+                </div>
+
+                <div className="space-y-5 text-xs md:text-sm">
+                  <div className="flex flex-wrap items-baseline gap-2 leading-loose">
+                    <span className="text-gray-500 dark:text-gray-400 font-light select-none">My name is</span>
+                    <input 
+                      type="text" 
+                      placeholder="Your Name"
+                      value={visitorName}
+                      onChange={(e) => setVisitorName(e.target.value)}
+                      className="bg-transparent border-b border-[#c2b98f] dark:border-[#383526] focus:border-[#ff4d8d] dark:focus:border-[#ff4d8d] outline-none px-1 py-0.5 text-[#3a3523] dark:text-[#ebdca2] font-semibold min-w-[130px] transition-colors"
+                      required
+                    />
+                    <span className="text-gray-500 dark:text-gray-400 font-light select-none">and you can reply at</span>
+                    <input 
+                      type="email" 
+                      placeholder="your.email@example.com"
+                      value={visitorEmail}
+                      onChange={(e) => setVisitorEmail(e.target.value)}
+                      className="bg-transparent border-b border-[#c2b98f] dark:border-[#383526] focus:border-[#ff4d8d] dark:focus:border-[#ff4d8d] outline-none px-1 py-0.5 text-[#3a3523] dark:text-[#ebdca2] font-semibold min-w-[180px] transition-colors"
+                      required
+                    />
+                  </div>
+
+                  <div className="space-y-2 pt-2">
+                    <label className="text-gray-550 dark:text-gray-400 font-light block select-none">Here is what I wanted to write:</label>
+                    <textarea 
+                      placeholder="I'd love to collaborate on a design / discuss a project / say hello..."
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      rows="5"
+                      className="w-full bg-transparent border border-[#eedda2]/20 dark:border-[#2b281f] focus:border-[#ff4d8d]/50 dark:focus:border-[#ff4d8d]/50 rounded-xl p-3 outline-none text-[#3a3523] dark:text-[#ebdca2] font-serif-display italic leading-relaxed resize-none transition-all"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between pt-4 border-t border-[#eedda2]/45 dark:border-[#2b281f] select-none">
+                <div className="text-xs text-[#877c59] dark:text-[#918664]">
+                  <span>With sincerity,</span>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  {/* Wax Seal */}
+                  <div className="w-10 h-10 rounded-full bg-rose-600/90 dark:bg-rose-700/80 flex items-center justify-center shadow-md relative rotate-12 select-none border border-rose-500/10">
+                    <span className="text-white font-serif-display italic font-bold text-xs select-none">A.K.</span>
+                  </div>
+                  
+                  <button
+                    type="submit"
+                    disabled={submitted}
+                    className="px-5 py-2.5 rounded-xl bg-[#ff4d8d] hover:bg-[#ff3a7d] text-white font-bold text-xs flex items-center gap-2 transition-all duration-300 shadow-md shadow-[#ff4d8d]/10 hover:shadow-[#ff4d8d]/20 hover:-translate-y-0.5 disabled:opacity-50"
+                  >
+                    {submitted ? "Sending..." : "Send Letter"} <Send size={12} />
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
 
         </div>
-
-        {/* Right Column: Dynamic Stationery Preview */}
-        <div className="hidden lg:flex relative bg-[#fcf9f1] dark:bg-[#171612] border border-[#ebdca2]/40 dark:border-[#2e2b20] rounded-3xl p-8 shadow-sm flex-col justify-between overflow-hidden">
-          {/* Airmail border striping (subtle) */}
-          <div className="absolute inset-0 border-[6px] border-transparent bg-clip-content bg-gradient-to-r from-red-500/10 via-transparent to-blue-500/10 pointer-events-none" />
-          
-          {/* Stamp and Postmark */}
-          <div className="absolute right-8 top-8 flex flex-col items-center">
-            <div className="w-14 h-16 bg-[#eedda2]/20 dark:bg-[#eedda2]/5 border border-dashed border-[#c2b98f] dark:border-[#383526] rounded flex items-center justify-center text-xl select-none rotate-6 shadow-sm">
-              ✨
-            </div>
-            {/* Circular Postmark */}
-            <div className="absolute w-20 h-20 border border-[#993b27]/20 dark:border-[#d1705b]/15 rounded-full -top-2 -right-2 flex items-center justify-center rotate-45 select-none pointer-events-none">
-              <span className="text-[6px] text-[#993b27]/30 dark:text-[#d1705b]/25 font-bold uppercase tracking-widest font-mono">GURUGRAM • IN</span>
-            </div>
-          </div>
-
-          {/* Letter Body Content */}
-          <div className="space-y-4 pr-16">
-            <div className="font-serif-display italic text-[#3a3523] dark:text-[#ebdca2] text-base border-b border-[#eedda2]/45 dark:border-[#2b281f] pb-2">
-              Dear {profile.name.split(' ')[0]},
-            </div>
-
-            <div className="text-sm font-serif-display italic text-[#4d4838] dark:text-[#beb696] leading-relaxed whitespace-pre-wrap min-h-[160px]">
-              {message || "I'd love to collaborate on a design / discuss a project / say hello..."}
-            </div>
-          </div>
-
-          {/* Letter Footer */}
-          <div className="flex justify-between items-end border-t border-[#eedda2]/45 dark:border-[#2b281f] pt-4 mt-6">
-            <div className="text-xs text-[#877c59] dark:text-[#918664] space-y-0.5">
-              <div className="font-serif-display italic font-semibold">{visitorName || "Your Name"}</div>
-              <div className="text-[10px] font-mono opacity-80">{visitorEmail || "your.email@example.com"}</div>
-            </div>
-            
-            {/* Wax Seal */}
-            <div className="w-12 h-12 rounded-full bg-rose-600/90 dark:bg-rose-700/80 flex items-center justify-center shadow-md relative rotate-12 select-none border border-rose-500/10 hover:scale-105 transition-transform duration-300">
-              <span className="text-white font-serif-display italic font-bold text-xs select-none">A.K.</span>
-              <div className="absolute inset-0.5 rounded-full border border-dashed border-rose-500/20" />
-            </div>
-          </div>
-
-        </div>
-
       </div>
 
+      {/* Footer layout matching the Next.js visual specifications */}
+      <footer className="footer bg-gradient-to-b from-pink-50 to-pink-100 dark:from-[#2a1b38] dark:to-[#1c1126] transition-colors duration-300 border-none py-10 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono select-none">
+          <div className="flex items-center gap-2 text-slate-500 dark:text-gray-400">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
+              <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.5 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5.7 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-.7zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+            </svg>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-[#ff4d8d] transition-colors">
+              Github Repository
+            </a>
+          </div>
+          <p className="copyright text-slate-500 dark:text-gray-400 font-bold">
+            © {new Date().getFullYear()} Akshat Kumar. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </section>
   );
 }

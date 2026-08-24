@@ -109,43 +109,46 @@ export default function Playground() {
   return (
     <section 
       id="playground" 
-      className="py-20 px-4 md:px-6 max-w-5xl mx-auto space-y-16 border-t border-slate-100 dark:border-slate-900/50"
+      className="py-32 px-4 md:px-6 max-w-5xl mx-auto space-y-16 border-t border-gray-150 dark:border-zinc-900/60 w-full bg-white dark:bg-[#1a1625] text-gray-900 dark:text-white transition-colors duration-300 relative"
     >
       
       <div className="text-center space-y-3 max-w-2xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-serif-display font-bold text-slate-800 dark:text-white">
-          Interactive <span className="text-rose-500">Playground</span>
+        <span className="block text-2xl text-gray-650 dark:text-gray-400 text-center font-mono font-bold mb-2 animate-fade-in">
+          Interactive
+        </span>
+        <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-[#ff4d8d] to-[#40c9ff] text-transparent bg-clip-text">
+          Interactive Playground
         </h2>
-        <p className="text-slate-600 dark:text-slate-400 font-light leading-relaxed text-sm md:text-base">
+        <p className="text-gray-500 dark:text-gray-400 font-light leading-relaxed text-sm md:text-base">
           A small corner of interactive ideas. Pause for a moment, share your mood, toggle some relaxing study music, or leave a warm greeting on the guestbook!
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8 items-start">
+      <div className="grid md:grid-cols-2 gap-8 items-stretch pt-4">
         
         {/* Mood and Sound Card */}
-        <div className="space-y-8">
+        <div className="space-y-8 flex flex-col">
           
           {/* Mood Section */}
-          <div className="glass p-6 md:p-8 rounded-3xl border space-y-6">
+          <div className="bg-white dark:bg-zinc-800/40 backdrop-blur-md rounded-[2rem] p-6 md:p-8 border border-zinc-200 dark:border-zinc-700/50 shadow-sm hover:shadow-2xl hover:border-[#ff4d8d]/30 transition-all duration-500 flex-1">
             <div className="space-y-2">
-              <h3 className="text-lg md:text-xl font-serif-display font-semibold text-slate-800 dark:text-white flex items-center gap-2 select-none">
-                <Smile className="text-rose-500" size={18} /> How is your energy today?
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2 select-none">
+                <Smile className="text-[#ff4d8d]" size={18} /> How is your energy today?
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-light">
+              <p className="text-xs text-gray-500 dark:text-gray-450 font-light">
                 Tell me how you're feeling and get a small personalized note back.
               </p>
             </div>
             
-            <div className="flex flex-wrap gap-2.5">
+            <div className="flex flex-wrap gap-2.5 mt-6">
               {moods.map((m) => (
                 <button
                   key={m.id}
                   onClick={() => handleMoodSelect(m.id)}
-                  className={`px-3.5 py-2 rounded-full text-xs font-medium border flex items-center gap-1.5 transition-all duration-300 select-none ${
+                  className={`px-3.5 py-2 rounded-full text-xs font-semibold border flex items-center gap-1.5 transition-all duration-300 select-none ${
                     selectedMood === m.id
-                      ? 'bg-rose-500/10 border-rose-500 text-rose-600 dark:text-rose-400 shadow-sm'
-                      : 'glass border-slate-200/60 dark:border-slate-800 hover:border-rose-500/30'
+                      ? 'bg-[#ff4d8d]/10 border-[#ff4d8d] text-[#ff4d8d] shadow-sm'
+                      : 'bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-gray-600 dark:text-gray-400 hover:border-[#ff4d8d]/50'
                   }`}
                 >
                   <span className="text-sm select-none">{m.emoji}</span>
@@ -155,19 +158,19 @@ export default function Playground() {
             </div>
 
             {selectedMood && (
-              <div className="p-4 rounded-2xl bg-rose-500/5 dark:bg-rose-500/10 border border-rose-500/15 dark:border-rose-500/20 text-xs md:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-light animate-fade-in">
+              <div className="p-4 rounded-2xl bg-[#ff4d8d]/5 dark:bg-[#ff4d8d]/10 border border-[#ff4d8d]/15 dark:border-[#ff4d8d]/20 text-xs md:text-sm text-gray-700 dark:text-gray-300 leading-relaxed font-light mt-6 animate-fade-in">
                 {moodMessage}
               </div>
             )}
           </div>
 
           {/* Rain Sound Section */}
-          <div className="glass p-6 md:p-8 rounded-3xl border space-y-6">
+          <div className="bg-white dark:bg-zinc-800/40 backdrop-blur-md rounded-[2rem] p-6 md:p-8 border border-zinc-200 dark:border-zinc-700/50 shadow-sm hover:shadow-2xl hover:border-[#ff4d8d]/30 transition-all duration-500 flex-1">
             <div className="space-y-2">
-              <h3 className="text-lg md:text-xl font-serif-display font-semibold text-slate-800 dark:text-white flex items-center gap-2 select-none">
-                <Music className="text-rose-500" size={18} /> Study Soundtrack
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2 select-none">
+                <Music className="text-[#ff4d8d]" size={18} /> Study Soundtrack
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-light">
+              <p className="text-xs text-gray-500 dark:text-gray-450 font-light">
                 Toggle a relaxing instrumental song to loop in the background while you browse.
               </p>
             </div>
@@ -178,17 +181,17 @@ export default function Playground() {
               loop
             />
 
-            <div className="flex items-center gap-4 bg-slate-100/50 dark:bg-slate-900/60 p-4 rounded-2xl border dark:border-slate-800/80">
+            <div className="flex items-center gap-4 bg-gray-50 dark:bg-zinc-900 p-4 rounded-2xl border dark:border-zinc-800/80 mt-6">
               <button
                 onClick={handleAudioToggle}
-                className="w-12 h-12 rounded-full bg-rose-500 hover:bg-rose-600 dark:bg-rose-600 dark:hover:bg-rose-700 text-white flex items-center justify-center transition-all duration-300 shadow-md shadow-rose-500/15 select-none"
+                className="w-12 h-12 rounded-full bg-[#ff4d8d] hover:bg-[#ff3a7d] text-white flex items-center justify-center transition-all duration-300 shadow-md shadow-[#ff4d8d]/15 select-none shrink-0"
                 aria-label={isPlaying ? "Pause Sound" : "Play Sound"}
               >
                 {isPlaying ? <Pause size={20} /> : <Play size={20} className="ml-1" />}
               </button>
 
               <div className="flex-1 space-y-1">
-                <div className="flex justify-between items-center text-xs font-semibold text-slate-600 dark:text-slate-400 select-none">
+                <div className="flex justify-between items-center text-xs font-bold text-gray-700 dark:text-gray-300 select-none">
                   <span>Acoustic Chill Instrumental</span>
                   {isPlaying ? (
                     <div className="flex items-end gap-[2px] h-3 select-none pr-1">
@@ -199,18 +202,18 @@ export default function Playground() {
                             animationDelay: `${i * 0.12}s`,
                             animationDuration: `${0.6 + (i % 3) * 0.15}s`
                           }}
-                          className="w-[2px] rounded-full bg-rose-500 animate-eq-bar"
+                          className="w-[2px] rounded-full bg-[#ff4d8d] animate-eq-bar"
                         />
                       ))}
                     </div>
                   ) : (
-                    <span className="font-light italic text-[10px] text-rose-500">Muted by default</span>
+                    <span className="font-light italic text-[10px] text-[#ff4d8d]">Muted by default</span>
                   )}
                 </div>
                 <div className="flex items-center gap-2">
                   <button 
                     onClick={handleMuteToggle}
-                    className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-350 transition-colors"
+                    className="text-gray-450 hover:text-gray-650 dark:hover:text-gray-300 transition-colors"
                   >
                     {isMuted ? <VolumeX size={15} /> : <Volume2 size={15} />}
                   </button>
@@ -221,7 +224,7 @@ export default function Playground() {
                     step="0.05"
                     value={volume}
                     onChange={handleVolumeChange}
-                    className="w-full h-1 bg-slate-200 dark:bg-slate-700 rounded-full appearance-none cursor-pointer accent-rose-500"
+                    className="w-full h-1 bg-gray-200 dark:bg-zinc-800 rounded-full appearance-none cursor-pointer accent-[#ff4d8d]"
                   />
                 </div>
               </div>
@@ -231,25 +234,25 @@ export default function Playground() {
         </div>
 
         {/* Guestbook Card */}
-        <div className="glass p-6 md:p-8 rounded-3xl border space-y-6 h-full flex flex-col justify-between">
+        <div className="bg-white dark:bg-zinc-800/40 backdrop-blur-md rounded-[2rem] p-6 md:p-8 border border-zinc-200 dark:border-zinc-700/50 shadow-sm hover:shadow-2xl hover:border-[#ff4d8d]/30 transition-all duration-500 flex flex-col justify-between">
           <div className="space-y-4">
             <div className="space-y-2">
-              <h3 className="text-lg md:text-xl font-serif-display font-semibold text-slate-800 dark:text-white flex items-center gap-2 select-none">
-                <Coffee className="text-rose-500" size={18} /> Guestbook
+              <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2 select-none">
+                <Coffee className="text-[#ff4d8d]" size={18} /> Guestbook
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-light">
+              <p className="text-xs text-gray-500 dark:text-gray-450 font-light">
                 Sign your visit! Leave a short message and choose an emoji stamp.
               </p>
             </div>
 
-            <form onSubmit={handleGuestbookSubmit} className="space-y-3.5">
+            <form onSubmit={handleGuestbookSubmit} className="space-y-3.5 mt-4">
               <div className="grid grid-cols-3 gap-2">
                 <input 
                   type="text" 
                   placeholder="Your Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="col-span-2 px-3 py-2 text-xs rounded-xl glass border border-slate-200 dark:border-slate-800 focus:border-rose-500/50 dark:focus:border-rose-500/50 outline-none text-slate-800 dark:text-slate-100"
+                  className="col-span-2 px-3 py-2.5 text-xs rounded-xl bg-gray-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 focus:border-[#ff4d8d]/50 outline-none text-gray-800 dark:text-zinc-100 font-semibold"
                   required
                 />
                 
@@ -257,7 +260,7 @@ export default function Playground() {
                 <select
                   value={selectedEmoji}
                   onChange={(e) => setSelectedEmoji(e.target.value)}
-                  className="px-2 py-2 text-xs rounded-xl glass border border-slate-200 dark:border-slate-800 focus:border-rose-500/50 outline-none bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 cursor-pointer"
+                  className="px-2 py-2.5 text-xs rounded-xl bg-gray-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 focus:border-[#ff4d8d]/50 outline-none text-gray-800 dark:text-zinc-100 cursor-pointer"
                 >
                   {emojis.map((emoji) => (
                     <option key={emoji} value={emoji}>{emoji}</option>
@@ -271,13 +274,13 @@ export default function Playground() {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows="3"
-                  className="w-full px-3 py-2.5 text-xs rounded-xl glass border border-slate-200 dark:border-slate-800 focus:border-rose-500/50 dark:focus:border-rose-500/50 outline-none text-slate-800 dark:text-slate-100 resize-none"
+                  className="w-full px-3 py-2.5 text-xs rounded-xl bg-gray-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 focus:border-[#ff4d8d]/50 outline-none text-gray-850 dark:text-zinc-200 resize-none font-light leading-relaxed"
                   required
                 />
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="absolute right-2 bottom-3 p-2 rounded-lg bg-rose-500 hover:bg-rose-600 dark:bg-rose-600 dark:hover:bg-rose-700 text-white transition-colors duration-300 disabled:opacity-50"
+                  className="absolute right-2.5 bottom-3.5 p-2 rounded-lg bg-[#ff4d8d] hover:bg-[#ff3a7d] text-white transition-colors duration-300 disabled:opacity-50"
                   aria-label="Submit Sign"
                 >
                   {isSubmitting ? <Check size={12} className="animate-ping" /> : <Send size={12} />}
@@ -287,21 +290,21 @@ export default function Playground() {
           </div>
 
           {/* Sticky Notes Area */}
-          <div className="mt-6 flex-1 flex flex-col justify-start">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2 select-none">Recent Visitors</span>
-            <div className="space-y-2.5 max-h-[160px] overflow-y-auto pr-1 scrollbar-thin">
+          <div className="mt-8 flex-1 flex flex-col justify-start">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-2 select-none">Recent Visitors</span>
+            <div className="space-y-2.5 max-h-[160px] overflow-y-auto pr-1 scrollbar-hide">
               {guestbook.map((entry, idx) => (
                 <div 
                   key={idx} 
-                  className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50/50 dark:bg-slate-900/40 border border-slate-100 dark:border-slate-800/80 animate-fade-in"
+                  className="flex items-start gap-2.5 p-3 rounded-xl bg-gray-50/50 dark:bg-zinc-900/30 border border-zinc-150 dark:border-zinc-850/80 animate-fade-in"
                 >
                   <span className="text-base select-none leading-none pt-0.5">{entry.emoji}</span>
-                  <div className="flex-1 space-y-0.5">
+                  <div className="flex-1 space-y-0.5 text-left">
                     <div className="flex justify-between items-center select-none">
-                      <span className="text-xs font-semibold text-slate-700 dark:text-slate-200">{entry.name}</span>
-                      <span className="text-[9px] text-slate-400 dark:text-slate-500">{entry.date}</span>
+                      <span className="text-xs font-bold text-gray-700 dark:text-gray-300">{entry.name}</span>
+                      <span className="text-[9px] text-gray-455 dark:text-gray-500">{entry.date}</span>
                     </div>
-                    <p className="text-[11px] font-light text-slate-550 dark:text-slate-400 leading-snug">{entry.message}</p>
+                    <p className="text-[11px] font-light text-gray-500 dark:text-gray-400 leading-snug">{entry.message}</p>
                   </div>
                 </div>
               ))}

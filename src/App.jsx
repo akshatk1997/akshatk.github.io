@@ -4,6 +4,8 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
 import Certifications from './components/Certifications';
+import Skills from './components/Skills';
+import Experience from './components/Experience';
 import Playground from './components/Playground';
 import Contact from './components/Contact';
 import { portfolioConfig } from './portfolio.config';
@@ -57,7 +59,7 @@ export default function App() {
 
   // Section scroll-spy using IntersectionObserver (buttery smooth compositor thread calculations)
   useEffect(() => {
-    const sections = ['hero', 'about', 'projects', 'certifications', 'playground', 'contact'];
+    const sections = ['hero', 'about', 'techstack', 'experience', 'projects', 'certifications', 'playground', 'contact'];
     
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
@@ -118,9 +120,11 @@ export default function App() {
       />
 
       {/* Main sections */}
-      <main className="w-full space-y-4">
+      <main className="w-full space-y-0">
         <Hero />
         <About />
+        <Skills />
+        <Experience />
         <Projects />
         <Certifications />
         <Playground />
