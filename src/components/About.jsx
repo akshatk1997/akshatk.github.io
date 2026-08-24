@@ -172,15 +172,13 @@ export default function About() {
                   <h4 className="font-serif-display font-bold text-slate-800 dark:text-white text-sm md:text-base">
                     {event.title}
                   </h4>
-                  <p className={`text-xs md:text-sm text-slate-600 dark:text-slate-400 font-light mt-1.5 leading-relaxed ${
-                    isExpanded ? 'block animate-fade-in' : 'line-clamp-2 md:line-clamp-none'
-                  }`}>
+                  <p className="text-xs md:text-sm text-slate-600 dark:text-slate-400 font-light mt-1.5 leading-relaxed line-clamp-none">
                     {event.description}
                   </p>
                   
                   {isExpanded && (
                     <div className="mt-3 pt-3 border-t border-rose-500/10 dark:border-rose-500/20 text-[10px] text-slate-400 dark:text-slate-500 font-medium italic flex items-center gap-1.5">
-                      <span>✨ Tap again to collapse</span>
+                      <span>✨ Tap again to release focus</span>
                     </div>
                   )}
                 </div>
