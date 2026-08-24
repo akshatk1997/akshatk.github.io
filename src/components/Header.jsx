@@ -26,7 +26,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
         >
           <span>{portfolioConfig.profile.avatarPlaceholder}</span>
           <span className="hidden sm:inline">{portfolioConfig.profile.name}</span>
-          <span className="sm:hidden">{portfolioConfig.profile.name.split(' ')[0]}</span>
+          <span className="hidden xs:inline sm:hidden">{portfolioConfig.profile.name.split(' ')[0]}</span>
         </div>
         
         <nav className="flex items-center gap-1">

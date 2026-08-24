@@ -95,7 +95,7 @@ export default function About() {
             ))}
           </div>
           
-          <div className="pl-4 space-y-6">
+          <div className="pl-6 md:pl-8 space-y-6">
             <h3 className="text-xl md:text-2xl font-serif-display font-bold text-[#3a3523] dark:text-[#ebdca2] flex items-center gap-2">
               Personal <span className="text-[#993b27] dark:text-[#d1705b]">Stack</span>
             </h3>

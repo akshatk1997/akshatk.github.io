@@ -31,8 +31,8 @@ export default function Hero() {
 
         {/* Hero Copy */}
         <div className="space-y-4">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-sans font-extrabold tracking-tight text-slate-800 dark:text-white leading-tight">
-            Hi, I'm <span className="whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-pink-500 to-amber-500">{profile.name}</span>
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-sans font-extrabold tracking-tight text-slate-800 dark:text-white leading-tight">
+            Hi, I'm <span className="inline-block xs:whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-pink-500 to-amber-500">{profile.name}</span>
           </h1>
           <p className="text-sm sm:text-base md:text-lg font-sans font-semibold uppercase tracking-wider text-rose-500 dark:text-rose-400">
             {profile.title}
