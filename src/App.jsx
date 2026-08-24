@@ -130,20 +130,6 @@ export default function App() {
         <Playground />
         <Contact />
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-slate-100 dark:border-slate-900/60 py-10 px-6 mt-10 bg-slate-50/50 dark:bg-slate-950/50 select-none">
-        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 dark:text-slate-500 font-light">
-          <div className="flex items-center gap-1.5 justify-center sm:justify-start">
-            <span>Built with React & Tailwind. Crafting with</span>
-            <Heart size={10} className="text-rose-500 fill-rose-500 animate-pulse" />
-            <span>© {new Date().getFullYear()} {portfolioConfig.profile.name}</span>
-          </div>
-          <div className="text-center sm:text-right font-serif-display italic">
-            "Design is not just what it looks like, it's how it makes you feel."
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

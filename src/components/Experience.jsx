@@ -15,11 +15,9 @@ export default function Experience() {
       const rect = sectionRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
       
-      // Calculate scroll progress through this section
-      const totalHeight = rect.height + viewportHeight;
-      const scrolledPast = viewportHeight - rect.top;
-      
-      let progress = scrolledPast / totalHeight;
+      // Progress starts when section top reaches viewport center, ends when bottom reaches center
+      const viewportCenterOffset = (viewportHeight / 2) - rect.top;
+      let progress = viewportCenterOffset / rect.height;
       progress = Math.max(0, Math.min(1, progress));
       
       // Update DOM styles directly for maximum scroll compositor thread performance
