@@ -34,7 +34,7 @@ export default function About() {
             <div className="py-2 space-y-6 flex-grow flex flex-col justify-center">
               <div className="space-y-4">
                 <div>
-                  <p className="text-zinc-800 font-bold uppercase tracking-widest text-[10px] mb-1">2024 - 2026</p>
+                  <p className="text-zinc-800 font-bold uppercase tracking-widest text-[10px] mb-1">2025 - 2027</p>
                   <h5 className="text-lg font-extrabold leading-tight">MBA in AI & Data Science</h5>
                   <p className="text-zinc-700 font-semibold text-xs flex items-center gap-1.5 mt-0.5">
                     <MapPin size={13} /> Chandigarh University, Mohali
