@@ -4,6 +4,34 @@ import { portfolioConfig } from '../portfolio.config';
 
 export default function Experience() {
   const { timeline } = portfolioConfig.about;
+  
+  const sectionRef = useRef(null);
+  const lineRef = useRef(null);
+  const dotRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current || !lineRef.current || !dotRef.current) return;
+      const rect = sectionRef.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      
+      // Calculate scroll progress through this section
+      const totalHeight = rect.height + viewportHeight;
+      const scrolledPast = viewportHeight - rect.top;
+      
+      let progress = scrolledPast / totalHeight;
+      progress = Math.max(0, Math.min(1, progress));
+      
+      // Update DOM styles directly for maximum scroll compositor thread performance
+      lineRef.current.style.transform = `scaleY(${progress})`;
+      dotRef.current.style.top = `${progress * 100}%`;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Trigger initial sizing check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const getIcon = (type) => {
     switch (type) {
@@ -33,9 +61,14 @@ export default function Experience() {
 
   return (
     <section 
+      ref={sectionRef}
       id="experience" 
-      className="w-full relative z-0 py-32 bg-white dark:bg-[#1a1625] text-gray-900 dark:text-white transition-colors duration-300 border-t border-gray-150 dark:border-zinc-900/60"
+      className="w-full relative z-0 py-32 bg-white dark:bg-[#1a1625] text-gray-900 dark:text-white transition-colors duration-300 border-t border-gray-150 dark:border-zinc-900/60 overflow-hidden"
     >
+      {/* Blurred background glow blobs for cool ambient glow */}
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-[350px] h-[350px] rounded-full bg-[#ff4d8d]/5 dark:bg-[#ff4d8d]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
+      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 w-[400px] h-[400px] rounded-full bg-[#40c9ff]/5 dark:bg-[#40c9ff]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
+
       <div className="max-w-7xl mx-auto px-6">
         
         <span className="block text-2xl text-gray-650 dark:text-gray-400 text-center font-mono font-bold mb-2 animate-fade-in">
@@ -50,11 +83,22 @@ export default function Experience() {
         {/* Vertical Timeline Track */}
         <div className="relative pt-4">
           
-          {/* Vertical central timeline line */}
-          <div className="absolute top-0 bottom-0 left-[15px] md:left-1/2 w-[2px] bg-gray-250 dark:bg-zinc-800 -translate-x-1/2 z-0" />
+          {/* Background track line */}
+          <div className="absolute top-0 bottom-0 left-[15px] md:left-1/2 w-[2px] bg-gray-200 dark:bg-zinc-800/80 -translate-x-1/2 z-0" />
           
-          {/* Active pink dot at the very top */}
-          <div className="absolute left-[15px] md:left-1/2 w-4 h-4 rounded-full bg-[#ff4d8d] -translate-x-1/2 border-4 border-white dark:border-[#1a1625] z-10 shadow-[0_0_12px_rgba(255,77,141,0.8)] -top-1" />
+          {/* Animated Gradient timeline progress line */}
+          <div 
+            ref={lineRef}
+            className="absolute top-0 bottom-0 left-[15px] md:left-1/2 w-[2px] bg-gradient-to-b from-[#ff4d8d] via-[#b666d2] to-[#40c9ff] -translate-x-1/2 origin-top z-0 transition-transform duration-75 ease-out" 
+            style={{ transform: 'scaleY(0)', transformOrigin: 'top' }}
+          />
+
+          {/* Glowing sliding dot */}
+          <div 
+            ref={dotRef}
+            className="absolute left-[15px] md:left-1/2 w-4 h-4 rounded-full bg-[#ff4d8d] -translate-x-1/2 border-4 border-white dark:border-[#1a1625] z-10 shadow-[0_0_15px_rgba(255,77,141,0.9)] transition-all duration-75 ease-out" 
+            style={{ top: '0%' }}
+          />
 
           {/* Timeline Items Stack */}
           <div className="space-y-16 mt-8">
@@ -83,7 +127,7 @@ export default function Experience() {
 
                   {/* Right Side (Desktop): Timeline Card */}
                   <div className="w-full md:w-1/2 pl-0 md:pl-12 lg:pl-16 shrink-0 z-10 text-left">
-                    <div className="group bg-white dark:bg-zinc-800/40 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-700/50 shadow-sm hover:shadow-xl hover:border-[#ff4d8d]/50 transition-all duration-500 cursor-pointer">
+                    <div className="group bg-white/90 dark:bg-[#1a1625]/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-700/50 shadow-sm hover:shadow-xl hover:border-[#ff4d8d]/50 transition-all duration-500 cursor-pointer">
                       
                       {/* Date Header */}
                       <div className="flex items-center gap-2 text-[#b666d2] dark:text-[#c477e0] font-bold mb-3 select-none">
@@ -102,7 +146,7 @@ export default function Experience() {
                       </h4>
 
                       {/* Description */}
-                      <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-light leading-relaxed">
+                      <p className="text-xs sm:text-sm text-gray-550 dark:text-gray-400 font-light leading-relaxed">
                         {item.description}
                       </p>
 
