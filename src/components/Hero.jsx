@@ -21,8 +21,12 @@ export default function Hero() {
   return (
     <section 
       id="hero" 
-      className="w-full relative z-0 animate-slide-up-fade pt-28 sm:pt-32 pb-10 bg-white dark:bg-[#1a1625] text-gray-900 dark:text-white transition-colors duration-300"
+      className="w-full relative z-0 animate-slide-up-fade pt-28 sm:pt-32 pb-10 bg-white dark:bg-[#1a1625] text-gray-900 dark:text-white transition-colors duration-300 overflow-hidden"
     >
+      {/* Ambient blurred backdrop glows */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#818cf8]/5 dark:bg-[#818cf8]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
+      <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] rounded-full bg-[#fb7185]/5 dark:bg-[#fb7185]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Rounded Billboard Banner Card */}

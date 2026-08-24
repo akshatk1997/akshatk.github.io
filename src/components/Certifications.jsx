@@ -10,57 +10,64 @@ export default function Certifications() {
   return (
     <section 
       id="certifications" 
-      className="py-20 px-4 md:px-6 max-w-5xl mx-auto space-y-12 border-t border-slate-100 dark:border-slate-900/50"
+      className="py-32 bg-white dark:bg-[#1a1625] text-gray-900 dark:text-white transition-colors duration-300 relative w-full border-t border-gray-150 dark:border-zinc-900/60 overflow-hidden"
     >
-      <div className="text-center space-y-3 max-w-2xl mx-auto">
-        <span className="text-[10px] font-bold tracking-wider uppercase text-rose-550 dark:text-rose-400">Credentials & Training</span>
-        <h2 className="text-3xl md:text-4xl font-sans font-extrabold text-slate-800 dark:text-white">
-          Professional <span className="text-rose-500">Certifications</span>
-        </h2>
-        <p className="text-slate-600 dark:text-slate-400 font-light leading-relaxed text-sm md:text-base">
-          Validations of technical expertise, data analytics specializations, and design research methodologies.
-        </p>
-      </div>
+      {/* Blurred background ambient glows */}
+      <div className="absolute top-1/4 left-1/3 w-[300px] h-[300px] rounded-full bg-[#818cf8]/5 dark:bg-[#818cf8]/3 blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-1/4 right-1/3 w-[350px] h-[350px] rounded-full bg-[#fb7185]/5 dark:bg-[#fb7185]/3 blur-3xl pointer-events-none -z-10" />
 
-      <div className="grid md:grid-cols-2 gap-6">
-        {certifications.map((cert, idx) => (
-          <div 
-            key={idx} 
-            className="glass p-6 rounded-3xl border border-slate-100 dark:border-slate-900/50 shadow-sm flex flex-col justify-between hover:border-rose-500/20 hover:scale-[1.01] transition-all duration-300"
-          >
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-slate-100/50 dark:bg-slate-900/60 flex items-center justify-center border dark:border-slate-800/80">
-                  <Award className="text-rose-500" size={20} />
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <span className="block text-2xl text-gray-650 dark:text-gray-400 text-center font-mono font-bold mb-2 animate-fade-in select-none">
+          Credentials
+        </span>
+        <header className="mb-16">
+          <h1 className="text-center text-4xl md:text-5xl font-black bg-gradient-to-r from-[#818cf8] via-[#c084fc] to-[#fb7185] text-transparent bg-clip-text">
+            Certifications & Training
+          </h1>
+        </header>
+
+        {/* Credentials Grid */}
+        <div className="grid md:grid-cols-2 gap-6 pt-4 max-w-6xl mx-auto">
+          {certifications.map((cert, idx) => (
+            <div 
+              key={idx} 
+              className="bg-white/80 dark:bg-zinc-800/40 backdrop-blur-md rounded-[2.2rem] p-6 md:p-8 border border-zinc-200 dark:border-zinc-700/50 shadow-sm hover:shadow-2xl hover:border-[#c084fc]/50 transition-all duration-500 flex flex-col justify-between hover:-translate-y-1"
+            >
+              <div className="space-y-5 text-left">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-gray-50 dark:bg-zinc-900 border dark:border-zinc-800/80 flex items-center justify-center shrink-0 shadow-inner select-none">
+                    <Award className="text-[#c084fc]" size={22} />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-bold text-[#fb7185] uppercase tracking-widest block mb-0.5 select-none">
+                      {cert.issuer}
+                    </span>
+                    <h3 className="font-extrabold text-base md:text-lg text-slate-900 dark:text-white leading-snug">
+                      {cert.title}
+                    </h3>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-[9px] font-bold text-rose-600 dark:text-rose-450 uppercase tracking-wide">
-                    {cert.issuer}
-                  </span>
-                  <h3 className="font-bold text-sm md:text-base text-slate-800 dark:text-white leading-snug">
-                    {cert.title}
-                  </h3>
-                </div>
+                <p className="text-xs text-slate-500 dark:text-zinc-300 font-light leading-relaxed">
+                  {cert.description}
+                </p>
               </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-light leading-relaxed">
-                {cert.description}
-              </p>
+
+              {cert.credentialUrl && cert.credentialUrl !== '#' && (
+                <div className="pt-5 mt-5 border-t border-gray-100 dark:border-zinc-800/60 flex justify-end">
+                  <a 
+                    href={cert.credentialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-bold text-[#c084fc] hover:text-[#fb7185] flex items-center gap-1.5 transition-colors select-none"
+                  >
+                    View Credential <ExternalLink size={12} />
+                  </a>
+                </div>
+              )}
             </div>
-
-            {cert.credentialUrl && cert.credentialUrl !== '#' && (
-              <div className="pt-4 mt-4 border-t border-slate-100 dark:border-slate-900/20 flex justify-end">
-                <a 
-                  href={cert.credentialUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs font-medium text-rose-500 dark:text-rose-450 hover:text-rose-600 dark:hover:text-rose-400 flex items-center gap-1 transition-colors select-none"
-                >
-                  View Credential <ExternalLink size={12} />
-                </a>
-              </div>
-            )}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
