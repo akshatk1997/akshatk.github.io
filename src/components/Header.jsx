@@ -77,7 +77,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
           {/* Logo Brand */}
           <div 
             onClick={() => handleNavClick('hero')}
-            className="flex items-center gap-2 cursor-pointer font-serif-display font-extrabold text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-[#ff4d8d] to-[#40c9ff] tracking-wider uppercase pt-8"
+            className="flex items-center gap-2 cursor-pointer font-serif-display font-extrabold text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-[#818cf8] via-[#c084fc] to-[#fb7185] tracking-wider uppercase pt-8"
           >
             <span>{portfolioConfig.profile.avatarPlaceholder}</span>
             <span>{portfolioConfig.profile.name}</span>
@@ -91,13 +91,13 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
                 onClick={() => handleNavClick(item.id)}
                 className={`w-full text-left py-2 font-sans font-bold text-base sm:text-lg transition-colors relative group select-none ${
                   activeSection === item.id 
-                    ? 'text-[#ff4d8d]' 
-                    : 'text-gray-500 dark:text-gray-400 hover:text-[#ff4d8d] dark:hover:text-[#ff4d8d]'
+                    ? 'text-[#c084fc]' 
+                    : 'text-gray-550 dark:text-gray-400 hover:text-[#c084fc] dark:hover:text-[#c084fc]'
                 }`}
               >
                 {item.label}
                 {activeSection === item.id && (
-                  <span className="absolute bottom-1.5 left-0 w-8 h-[2.5px] rounded-full bg-gradient-to-r from-[#ff4d8d] to-[#40c9ff]" />
+                  <span className="absolute bottom-1.5 left-0 w-8 h-[2.5px] rounded-full bg-gradient-to-r from-[#818cf8] via-[#c084fc] to-[#fb7185]" />
                 )}
               </button>
             ))}
@@ -113,7 +113,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-[#ff4d8d] dark:hover:bg-[#ff4d8d] transition-all duration-300 hover:scale-105"
+                className="p-2.5 rounded-full bg-gray-105 dark:bg-zinc-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-[#c084fc] dark:hover:bg-[#c084fc] transition-all duration-300 hover:scale-105"
                 title={social.name}
               >
                 {renderIcon(social.iconName)}

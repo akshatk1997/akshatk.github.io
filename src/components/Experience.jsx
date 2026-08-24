@@ -64,8 +64,8 @@ export default function Experience() {
       className="w-full relative z-0 py-32 bg-white dark:bg-[#1a1625] text-gray-900 dark:text-white transition-colors duration-300 border-t border-gray-150 dark:border-zinc-900/60 overflow-hidden"
     >
       {/* Blurred background glow blobs for cool ambient glow */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-[350px] h-[350px] rounded-full bg-[#ff4d8d]/5 dark:bg-[#ff4d8d]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
-      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 w-[400px] h-[400px] rounded-full bg-[#40c9ff]/5 dark:bg-[#40c9ff]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-[350px] h-[350px] rounded-full bg-[#fb7185]/5 dark:bg-[#fb7185]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
+      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 w-[400px] h-[400px] rounded-full bg-[#818cf8]/5 dark:bg-[#818cf8]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
 
       <div className="max-w-7xl mx-auto px-6">
         
@@ -73,7 +73,7 @@ export default function Experience() {
           Journey
         </span>
         <header className="mb-16">
-          <h1 className="text-center text-4xl md:text-5xl font-black bg-gradient-to-r from-[#ff4d8d] to-[#40c9ff] text-transparent bg-clip-text">
+          <h1 className="text-center text-4xl md:text-5xl font-black bg-gradient-to-r from-[#818cf8] via-[#c084fc] to-[#fb7185] text-transparent bg-clip-text">
             My Experience
           </h1>
         </header>
@@ -82,19 +82,19 @@ export default function Experience() {
         <div className="relative pt-4">
           
           {/* Background track line */}
-          <div className="absolute top-0 bottom-0 left-[15px] md:left-1/2 w-[2px] bg-gray-200 dark:bg-zinc-800/80 -translate-x-1/2 z-0" />
+          <div className="absolute top-0 bottom-0 left-[15px] md:left-1/2 w-[2px] bg-gray-250 dark:bg-zinc-850 -translate-x-1/2 z-0" />
           
           {/* Animated Gradient timeline progress line */}
           <div 
             ref={lineRef}
-            className="absolute top-0 bottom-0 left-[15px] md:left-1/2 w-[2px] bg-gradient-to-b from-[#ff4d8d] via-[#b666d2] to-[#40c9ff] -translate-x-1/2 origin-top z-0 transition-transform duration-75 ease-out" 
+            className="absolute top-0 bottom-0 left-[15px] md:left-1/2 w-[2px] bg-gradient-to-b from-[#818cf8] via-[#c084fc] to-[#fb7185] -translate-x-1/2 origin-top z-0 transition-transform duration-75 ease-out" 
             style={{ transform: 'scaleY(0)', transformOrigin: 'top' }}
           />
 
           {/* Glowing sliding dot */}
           <div 
             ref={dotRef}
-            className="absolute left-[15px] md:left-1/2 w-4 h-4 rounded-full bg-[#ff4d8d] -translate-x-1/2 border-4 border-white dark:border-[#1a1625] z-10 shadow-[0_0_15px_rgba(255,77,141,0.9)] transition-all duration-75 ease-out" 
+            className="absolute left-[15px] md:left-1/2 w-4 h-4 rounded-full bg-[#c084fc] -translate-x-1/2 border-4 border-white dark:border-[#1a1625] z-10 shadow-[0_0_15px_rgba(192,132,252,0.9)] transition-all duration-75 ease-out" 
             style={{ top: '0%' }}
           />
 
@@ -125,10 +125,10 @@ export default function Experience() {
 
                   {/* Right Side (Desktop): Timeline Card */}
                   <div className="w-full md:w-1/2 pl-0 md:pl-12 lg:pl-16 shrink-0 z-10 text-left">
-                    <div className="group bg-white/90 dark:bg-[#1a1625]/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-700/50 shadow-sm hover:shadow-xl hover:border-[#ff4d8d]/50 transition-all duration-500 cursor-pointer">
+                    <div className="group bg-white/90 dark:bg-[#1a1625]/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-700/50 shadow-sm hover:shadow-xl hover:border-[#c084fc]/50 transition-all duration-500 cursor-pointer">
                       
                       {/* Date Header */}
-                      <div className="flex items-center gap-2 text-[#b666d2] dark:text-[#c477e0] font-bold mb-3 select-none">
+                      <div className="flex items-center gap-2 text-[#c084fc] font-bold mb-3 select-none">
                         <Calendar size={14} />
                         <span className="text-xs uppercase tracking-wider">{item.year}</span>
                       </div>
@@ -139,7 +139,7 @@ export default function Experience() {
                       </h3>
 
                       {/* Sub-label/Company */}
-                      <h4 className="text-sm text-[#40c9ff] font-bold uppercase tracking-wide mb-4 flex items-center gap-1.5 select-none">
+                      <h4 className="text-sm text-[#818cf8] font-bold uppercase tracking-wide mb-4 flex items-center gap-1.5 select-none">
                         {getIcon(item.type)} {item.type === 'milestone' ? 'Milestone' : 'Technical Focus'}
                       </h4>
 

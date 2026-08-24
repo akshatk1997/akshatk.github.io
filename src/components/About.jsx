@@ -24,101 +24,101 @@ export default function About() {
         {/* The Three Colorful Cards Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch pt-4">
           
-          {/* Card 1: Background (Yellow) */}
-          <div className="flex flex-col justify-between min-h-[380px] bg-[#fce06d] dark:bg-[#d4b94a] p-8 sm:p-10 rounded-[2.5rem] text-zinc-900 shadow-lg hover:-translate-y-3 transition-transform duration-500">
-            <div className="flex items-center gap-3 mb-6">
-              <GraduationCap className="w-8 h-8 shrink-0" />
-              <h3 className="text-3xl font-black tracking-tight">Background</h3>
+          {/* Card 1: Background (Amber Gold Glass) */}
+          <div className="flex flex-col justify-between min-h-[380px] bg-amber-500/5 dark:bg-amber-950/10 border border-amber-500/15 dark:border-amber-500/20 p-8 sm:p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl hover:border-amber-500/35 hover:-translate-y-3 transition-all duration-500 text-slate-800 dark:text-amber-250">
+            <div className="flex items-center gap-3 mb-6 select-none">
+              <GraduationCap className="w-8 h-8 shrink-0 text-amber-500 dark:text-amber-400" />
+              <h3 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white">Background</h3>
             </div>
             
             <div className="py-2 space-y-6 flex-grow flex flex-col justify-center">
               <div className="space-y-4">
                 <div>
-                  <p className="text-zinc-800 font-bold uppercase tracking-widest text-[10px] mb-1">2025 - 2027</p>
-                  <h5 className="text-lg font-extrabold leading-tight">MBA in AI & Data Science</h5>
-                  <p className="text-zinc-700 font-semibold text-xs flex items-center gap-1.5 mt-0.5">
+                  <p className="text-amber-600 dark:text-amber-400 font-bold uppercase tracking-widest text-[10px] mb-1">2025 - 2027</p>
+                  <h5 className="text-lg font-extrabold leading-tight text-slate-900 dark:text-white">MBA in AI & Data Science</h5>
+                  <p className="text-slate-500 dark:text-slate-400 font-semibold text-xs flex items-center gap-1.5 mt-0.5 select-none">
                     <MapPin size={13} /> Chandigarh University, Mohali
                   </p>
                 </div>
                 
-                <div className="pt-3 border-t border-zinc-900/10">
-                  <p className="text-zinc-800 font-bold uppercase tracking-widest text-[10px] mb-1">2019 - 2023</p>
-                  <h5 className="text-lg font-extrabold leading-tight">B.Tech in Computer Science</h5>
-                  <p className="text-zinc-700 font-semibold text-xs flex items-center gap-1.5 mt-0.5">
+                <div className="pt-3 border-t border-amber-500/10">
+                  <p className="text-amber-600 dark:text-amber-400 font-bold uppercase tracking-widest text-[10px] mb-1">2019 - 2023</p>
+                  <h5 className="text-lg font-extrabold leading-tight text-slate-900 dark:text-white">B.Tech in Computer Science</h5>
+                  <p className="text-slate-500 dark:text-slate-400 font-semibold text-xs flex items-center gap-1.5 mt-0.5 select-none">
                     <MapPin size={13} /> AKTU University
                   </p>
                 </div>
               </div>
             </div>
             
-            <div className="pt-4 border-t border-zinc-900/15">
-              <p className="text-zinc-850 text-xs font-semibold leading-relaxed">
+            <div className="pt-4 border-t border-amber-500/10 select-none">
+              <p className="text-slate-500 dark:text-slate-400 text-xs font-light leading-relaxed">
                 Combining advanced systems software engineering with business intelligence and product management models.
               </p>
             </div>
           </div>
 
-          {/* Card 2: My Journey (Green with Desktop Translate Offset) */}
-          <div className="flex flex-col justify-between min-h-[380px] bg-[#a3e4b7] dark:bg-[#72b888] p-8 sm:p-10 rounded-[2.5rem] text-zinc-900 shadow-lg hover:-translate-y-3 lg:translate-y-8 transition-transform duration-500">
-            <div className="flex items-center gap-3 mb-6">
-              <Sparkles className="w-8 h-8 shrink-0" />
-              <h3 className="text-3xl font-black tracking-tight">My Journey</h3>
+          {/* Card 2: My Journey (Emerald Mint Glass with Desktop Translate Offset) */}
+          <div className="flex flex-col justify-between min-h-[380px] bg-emerald-500/5 dark:bg-emerald-950/10 border border-emerald-500/15 dark:border-emerald-500/20 p-8 sm:p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl hover:border-emerald-500/35 hover:-translate-y-3 lg:translate-y-8 transition-all duration-500 text-slate-800 dark:text-emerald-250">
+            <div className="flex items-center gap-3 mb-6 select-none">
+              <Sparkles className="w-8 h-8 shrink-0 text-emerald-500 dark:text-emerald-400" />
+              <h3 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white">My Journey</h3>
             </div>
             
             <div className="py-2 space-y-4 flex-grow flex flex-col justify-center">
-              <h5 className="text-xl font-bold leading-tight italic text-zinc-800">
+              <h5 className="text-xl font-extrabold leading-tight italic text-emerald-600 dark:text-emerald-400">
                 "{about.quote || 'Building seamless digital experiences through innovative code solutions.'}"
               </h5>
             </div>
             
-            <div className="pt-4 border-t border-zinc-900/15">
-              <p className="text-zinc-850 text-xs font-semibold leading-relaxed">
+            <div className="pt-4 border-t border-emerald-500/10 select-none">
+              <p className="text-slate-500 dark:text-slate-400 text-xs font-light leading-relaxed">
                 {about.bio}
               </p>
             </div>
           </div>
 
-          {/* Card 3: Core Expertise (Blue) */}
-          <div className="flex flex-col justify-between min-h-[380px] bg-[#91d5db] dark:bg-[#60a9b0] p-8 sm:p-10 rounded-[2.5rem] text-zinc-900 shadow-lg hover:-translate-y-3 transition-transform duration-500">
-            <div className="flex items-center gap-3 mb-6">
-              <BrainCircuit className="w-8 h-8 shrink-0" />
-              <h3 className="text-3xl font-black tracking-tight">Core Expertise</h3>
+          {/* Card 3: Core Expertise (Cobalt Indigo Glass) */}
+          <div className="flex flex-col justify-between min-h-[380px] bg-indigo-500/5 dark:bg-indigo-950/10 border border-indigo-500/15 dark:border-indigo-500/20 p-8 sm:p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl hover:border-indigo-500/35 hover:-translate-y-3 transition-all duration-500 text-slate-800 dark:text-indigo-250">
+            <div className="flex items-center gap-3 mb-6 select-none">
+              <BrainCircuit className="w-8 h-8 shrink-0 text-indigo-500 dark:text-indigo-400" />
+              <h3 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white">Core Expertise</h3>
             </div>
             
             <div className="py-2 space-y-5 flex-grow flex flex-col justify-center">
               <div className="group flex items-start gap-4">
-                <div className="bg-white/40 p-2.5 rounded-xl group-hover:bg-white/60 transition-colors">
-                  <Code className="w-5 h-5 text-zinc-900" />
+                <div className="bg-indigo-500/10 p-2.5 rounded-xl group-hover:bg-indigo-500/20 transition-colors">
+                  <Code className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                 </div>
                 <div>
-                  <h5 className="text-base font-bold">AI Engineering</h5>
-                  <p className="text-zinc-700 font-semibold text-xs mt-0.5">Systems development & machine learning integrations</p>
+                  <h5 className="text-base font-extrabold text-slate-900 dark:text-white">AI Engineering</h5>
+                  <p className="text-slate-500 dark:text-slate-400 font-semibold text-xs mt-0.5">Systems development & machine learning integrations</p>
                 </div>
               </div>
               
               <div className="group flex items-start gap-4">
-                <div className="bg-white/40 p-2.5 rounded-xl group-hover:bg-white/60 transition-colors">
-                  <LayoutDashboard className="w-5 h-5 text-zinc-900" />
+                <div className="bg-indigo-500/10 p-2.5 rounded-xl group-hover:bg-indigo-500/20 transition-colors">
+                  <LayoutDashboard className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                 </div>
                 <div>
-                  <h5 className="text-base font-bold">Product Strategy</h5>
-                  <p className="text-zinc-700 font-semibold text-xs mt-0.5">Figma wiring, UX evaluation & telemetry experiments</p>
+                  <h5 className="text-base font-extrabold text-slate-900 dark:text-white">Product Strategy</h5>
+                  <p className="text-slate-500 dark:text-slate-400 font-semibold text-xs mt-0.5">Figma wiring, UX evaluation & telemetry experiments</p>
                 </div>
               </div>
               
               <div className="group flex items-start gap-4">
-                <div className="bg-white/40 p-2.5 rounded-xl group-hover:bg-white/60 transition-colors">
-                  <Brain className="w-5 h-5 text-zinc-900" />
+                <div className="bg-indigo-500/10 p-2.5 rounded-xl group-hover:bg-indigo-500/20 transition-colors">
+                  <Brain className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                 </div>
                 <div>
-                  <h5 className="text-base font-bold">Business Intelligence</h5>
-                  <p className="text-zinc-700 font-semibold text-xs mt-0.5">Relational query patterns & data analytics diagnostics</p>
+                  <h5 className="text-base font-extrabold text-slate-900 dark:text-white">Business Intelligence</h5>
+                  <p className="text-slate-500 dark:text-slate-400 font-semibold text-xs mt-0.5">Relational query patterns & data analytics diagnostics</p>
                 </div>
               </div>
             </div>
             
-            <div className="pt-4 border-t border-zinc-900/15">
-              <p className="text-zinc-850 text-xs font-semibold leading-relaxed">
+            <div className="pt-4 border-t border-indigo-500/10 select-none">
+              <p className="text-slate-500 dark:text-slate-400 text-xs font-light leading-relaxed">
                 Bridging software systems engineering, predictive business modeling, and user centered designs.
               </p>
             </div>

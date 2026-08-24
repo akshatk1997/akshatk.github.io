@@ -58,7 +58,7 @@ export default function Projects() {
           Explore
         </span>
         <header className="mb-12">
-          <h1 className="text-center text-4xl md:text-5xl font-black bg-gradient-to-r from-[#ff4d8d] to-[#40c9ff] text-transparent bg-clip-text">
+          <h1 className="text-center text-4xl md:text-5xl font-black bg-gradient-to-r from-[#818cf8] via-[#c084fc] to-[#fb7185] text-transparent bg-clip-text">
             My Recent Works
           </h1>
         </header>
@@ -132,7 +132,7 @@ export default function Projects() {
                     <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                       
                       <div className="space-y-1 mb-3">
-                        <span className="text-[10px] font-mono font-bold text-teal-400 flex items-center gap-1.5">
+                        <span className="text-[10px] font-mono font-bold text-[#c084fc] flex items-center gap-1.5">
                           <Sparkles size={10} /> Featured Project
                         </span>
                         <h3 className="text-2xl font-black tracking-tight leading-tight select-all">
@@ -167,7 +167,7 @@ export default function Projects() {
                             href={project.links.live} 
                             target="_blank" 
                             rel="noopener noreferrer"
-                            className="px-4 py-2 rounded-lg bg-white text-zinc-950 hover:bg-teal-400 hover:text-zinc-950 font-bold text-xs flex items-center gap-1.5 transition-all select-none shadow-sm"
+                            className="px-4 py-2 rounded-lg bg-white text-zinc-950 hover:bg-[#c084fc] hover:text-zinc-950 font-bold text-xs flex items-center gap-1.5 transition-all select-none shadow-sm"
                           >
                             Live Demo <ExternalLink size={12} />
                           </a>

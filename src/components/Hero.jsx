@@ -8,13 +8,13 @@ export default function Hero() {
   const getServiceIcon = (title) => {
     switch (title) {
       case "AI & Data Products":
-        return <Sparkles className="w-8 h-8 text-[#4ba1a7]" />;
+        return <Sparkles className="w-8 h-8 text-[#818cf8]" />;
       case "Product Engineering":
-        return <Code className="w-8 h-8 text-[#4ba1a7]" />;
+        return <Code className="w-8 h-8 text-[#818cf8]" />;
       case "UX & Product Design":
-        return <Layout className="w-8 h-8 text-[#4ba1a7]" />;
+        return <Layout className="w-8 h-8 text-[#818cf8]" />;
       default:
-        return <Sparkles className="w-8 h-8 text-[#4ba1a7]" />;
+        return <Sparkles className="w-8 h-8 text-[#818cf8]" />;
     }
   };
 
@@ -74,7 +74,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 px-4 sm:px-10">
           {profile.services.map((service, sIdx) => (
             <div key={sIdx} className="flex items-start gap-5 text-left">
-              <div className="p-3 bg-teal-500/10 dark:bg-teal-500/5 rounded-xl shrink-0 border dark:border-teal-500/10">
+              <div className="p-3 bg-[#818cf8]/10 dark:bg-[#818cf8]/5 rounded-xl shrink-0 border dark:border-[#818cf8]/10">
                 {getServiceIcon(service.title)}
               </div>
               <div className="space-y-1.5">

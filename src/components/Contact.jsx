@@ -35,7 +35,7 @@ export default function Contact() {
       id="contact" 
       className="w-full relative z-0 border-none m-0 p-0"
     >
-      <div className="bg-gradient-to-b from-indigo-50/50 to-pink-50 dark:from-[#1a1625] dark:to-[#2a1b38] flex items-center justify-center py-24 md:py-32 px-6 transition-colors duration-300">
+      <div className="bg-gradient-to-b from-slate-50 to-indigo-50/60 dark:from-[#1a1625] dark:to-[#0b0f19] flex items-center justify-center py-24 md:py-32 px-6 transition-colors duration-300">
         <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8 items-center">
           
           {/* Left Column: Heading and Contact Copier */}
@@ -60,10 +60,10 @@ export default function Contact() {
                 </span>
                 <button
                   onClick={handleCopyEmail}
-                  className="p-2 rounded-xl bg-gray-100 dark:bg-zinc-900 hover:bg-[#ff4d8d]/10 hover:text-[#ff4d8d] text-gray-400 border dark:border-zinc-800 transition-all duration-300 shadow-sm flex items-center justify-center shrink-0"
+                  className="p-2 rounded-xl bg-gray-100 dark:bg-zinc-900 hover:bg-[#c084fc]/10 hover:text-[#c084fc] text-gray-400 border dark:border-zinc-800 transition-all duration-300 shadow-sm flex items-center justify-center shrink-0"
                   title="Copy Email"
                 >
-                  {copied ? <Check size={13} className="text-[#ff4d8d]" /> : <Copy size={13} />}
+                  {copied ? <Check size={13} className="text-[#c084fc]" /> : <Copy size={13} />}
                 </button>
               </div>
             </div>
@@ -96,22 +96,22 @@ export default function Contact() {
 
                 <div className="space-y-5 text-xs md:text-sm">
                   <div className="flex flex-wrap items-baseline gap-2 leading-loose">
-                    <span className="text-gray-500 dark:text-gray-400 font-light select-none">My name is</span>
+                    <span className="text-gray-550 dark:text-gray-400 font-light select-none">My name is</span>
                     <input 
                       type="text" 
                       placeholder="Your Name"
                       value={visitorName}
                       onChange={(e) => setVisitorName(e.target.value)}
-                      className="bg-transparent border-b border-[#c2b98f] dark:border-[#383526] focus:border-[#ff4d8d] dark:focus:border-[#ff4d8d] outline-none px-1 py-0.5 text-[#3a3523] dark:text-[#ebdca2] font-semibold min-w-[130px] transition-colors"
+                      className="bg-transparent border-b border-[#c2b98f] dark:border-[#383526] focus:border-[#c084fc] dark:focus:border-[#c084fc] outline-none px-1 py-0.5 text-[#3a3523] dark:text-[#ebdca2] font-semibold min-w-[130px] transition-colors"
                       required
                     />
-                    <span className="text-gray-500 dark:text-gray-400 font-light select-none">and you can reply at</span>
+                    <span className="text-gray-555 dark:text-gray-400 font-light select-none">and you can reply at</span>
                     <input 
                       type="email" 
                       placeholder="your.email@example.com"
                       value={visitorEmail}
                       onChange={(e) => setVisitorEmail(e.target.value)}
-                      className="bg-transparent border-b border-[#c2b98f] dark:border-[#383526] focus:border-[#ff4d8d] dark:focus:border-[#ff4d8d] outline-none px-1 py-0.5 text-[#3a3523] dark:text-[#ebdca2] font-semibold min-w-[180px] transition-colors"
+                      className="bg-transparent border-b border-[#c2b98f] dark:border-[#383526] focus:border-[#c084fc] dark:focus:border-[#c084fc] outline-none px-1 py-0.5 text-[#3a3523] dark:text-[#ebdca2] font-semibold min-w-[180px] transition-colors"
                       required
                     />
                   </div>
@@ -140,11 +140,10 @@ export default function Contact() {
                   <div className="w-10 h-10 rounded-full bg-rose-600/90 dark:bg-rose-700/80 flex items-center justify-center shadow-md relative rotate-12 select-none border border-rose-500/10">
                     <span className="text-white font-serif-display italic font-bold text-xs select-none">A.K.</span>
                   </div>
-                  
-                  <button
+                              <button
                     type="submit"
                     disabled={submitted}
-                    className="px-5 py-2.5 rounded-xl bg-[#ff4d8d] hover:bg-[#ff3a7d] text-white font-bold text-xs flex items-center gap-2 transition-all duration-300 shadow-md shadow-[#ff4d8d]/10 hover:shadow-[#ff4d8d]/20 hover:-translate-y-0.5 disabled:opacity-50"
+                    className="px-5 py-2.5 rounded-xl bg-[#c084fc] hover:bg-[#b06ee0] text-white font-bold text-xs flex items-center gap-2 transition-all duration-300 shadow-md shadow-[#c084fc]/10 hover:shadow-[#c084fc]/20 hover:-translate-y-0.5 disabled:opacity-50"
                   >
                     {submitted ? "Sending..." : "Send Letter"} <Send size={12} />
                   </button>
@@ -157,14 +156,14 @@ export default function Contact() {
       </div>
 
       {/* Footer layout matching the Next.js visual specifications */}
-      <footer className="footer bg-gradient-to-b from-pink-50 to-pink-100 dark:from-[#2a1b38] dark:to-[#1c1126] transition-colors duration-300 border-none py-10 px-6">
+      <footer className="footer bg-gradient-to-b from-[#eef2ff] to-[#f8fafc] dark:from-[#0b0f19] dark:to-[#05070c] transition-colors duration-300 border-none py-10 px-6">
         <div className="max-w-6xl mx-auto flex flex-col items-center justify-center gap-4 text-xs font-mono select-none">
           <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-4 pb-4 border-b border-zinc-200/80 dark:border-zinc-800/40">
-            <div className="flex items-center gap-2 text-slate-500 dark:text-gray-400">
+            <div className="flex items-center gap-2 text-slate-505 dark:text-gray-400">
               <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
                 <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.5 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5.7 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-.7zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
               </svg>
-              <a href="https://github.com/akshatk1997/akshatk1997.github.io" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-[#ff4d8d] transition-colors">
+              <a href="https://github.com/akshatk1997/akshatk1997.github.io" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-[#c084fc] transition-colors">
                 Github Repository
               </a>
             </div>
