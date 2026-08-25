@@ -125,11 +125,11 @@ export default function Hero() {
 
           {/* Banner Copy (Top) */}
           <div className="relative z-10 pt-20 px-8 sm:px-16 pb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-            <div className="flex-grow max-w-3xl">
+            <div className="flex-grow max-w-3xl text-center lg:text-left">
               <p className="text-white/95 text-base sm:text-lg font-mono font-bold tracking-wider mb-3 uppercase">
                 {profile.title}
               </p>
-              <h1 className="text-white text-5xl sm:text-7xl md:text-[96px] font-black leading-[0.95] tracking-tighter select-none max-w-4xl min-h-[160px] sm:min-h-[220px] md:min-h-[280px] flex flex-col justify-start">
+              <h1 className="text-white text-5xl sm:text-7xl md:text-[96px] font-black leading-[0.95] tracking-tighter select-none max-w-4xl min-h-[160px] sm:min-h-[220px] md:min-h-[280px] flex flex-col items-center lg:items-start justify-start">
                 <span>
                   {line1}
                   {line1.length < fullLine1.length && (
@@ -151,7 +151,7 @@ export default function Hero() {
               </h1>
 
               {/* Relatable Mobile/Tablet Quote */}
-              <div className="lg:hidden mt-6 pl-4 border-l border-indigo-400/30 select-none">
+              <div className="lg:hidden mt-6 mx-auto w-fit select-none">
                 <p className="text-white/60 text-xs italic font-serif-display leading-relaxed">
                   "Making machines think, and interfaces feel."
                 </p>
