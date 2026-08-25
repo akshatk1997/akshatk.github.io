@@ -57,19 +57,34 @@ function AnimatedStat({ targetValue, label }) {
 export default function Hero() {
   const { profile } = portfolioConfig;
 
-  // Typing effect state hooks
-  const [displayText, setDisplayText] = useState('');
-  const fullText = "Hi, I am Akshat Kumar";
-  const typingSpeed = 150;
+  // Typing effect state hooks for vertical line stack
+  const [line1, setLine1] = useState('');
+  const [line2, setLine2] = useState('');
+  const [line3, setLine3] = useState('');
+
+  const fullLine1 = "Hi, I am";
+  const fullLine2 = "Akshat";
+  const fullLine3 = "Kumar";
+  
+  const typingSpeed = 120;
 
   useEffect(() => {
-    if (displayText.length < fullText.length) {
-      const timer = setTimeout(() => {
-        setDisplayText(fullText.substring(0, displayText.length + 1));
+    let timer;
+    if (line1.length < fullLine1.length) {
+      timer = setTimeout(() => {
+        setLine1(fullLine1.substring(0, line1.length + 1));
       }, typingSpeed);
-      return () => clearTimeout(timer);
+    } else if (line2.length < fullLine2.length) {
+      timer = setTimeout(() => {
+        setLine2(fullLine2.substring(0, line2.length + 1));
+      }, typingSpeed);
+    } else if (line3.length < fullLine3.length) {
+      timer = setTimeout(() => {
+        setLine3(fullLine3.substring(0, line3.length + 1));
+      }, typingSpeed);
     }
-  }, [displayText]);
+    return () => clearTimeout(timer);
+  }, [line1, line2, line3]);
 
   const getServiceIcon = (title) => {
     switch (title) {
@@ -113,11 +128,25 @@ export default function Hero() {
             <p className="text-white/95 text-base sm:text-lg font-mono font-bold tracking-wider mb-3 uppercase">
               {profile.title}
             </p>
-            <h1 className="text-white text-5xl sm:text-7xl md:text-[96px] font-black leading-[0.95] tracking-tighter select-none max-w-4xl min-h-[160px] sm:min-h-[220px] md:min-h-[280px]">
-              {displayText}
-              {displayText.length < fullText.length && (
-                <span className="border-r-4 border-white animate-pulse ml-1">&nbsp;</span>
-              )}
+            <h1 className="text-white text-5xl sm:text-7xl md:text-[96px] font-black leading-[0.95] tracking-tighter select-none max-w-4xl min-h-[160px] sm:min-h-[220px] md:min-h-[280px] flex flex-col justify-start">
+              <span>
+                {line1}
+                {line1.length < fullLine1.length && (
+                  <span className="border-r-4 border-white animate-pulse ml-1">&nbsp;</span>
+                )}
+              </span>
+              <span>
+                {line2}
+                {line1.length === fullLine1.length && line2.length < fullLine2.length && (
+                  <span className="border-r-4 border-white animate-pulse ml-1">&nbsp;</span>
+                )}
+              </span>
+              <span>
+                {line3}
+                {line2.length === fullLine2.length && line3.length < fullLine3.length && (
+                  <span className="border-r-4 border-white animate-pulse ml-1">&nbsp;</span>
+                )}
+              </span>
             </h1>
           </div>
 
