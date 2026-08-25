@@ -178,6 +178,12 @@ export const portfolioConfig = {
       credentialUrl: "https://deeplearning.ai"
     },
     {
+      title: "Introduction to Generative AI",
+      issuer: "Duke University / Coursera",
+      description: "Completed course authorized by Duke University covering generative AI architectures, model capabilities, and pragmatic applications.",
+      credentialUrl: "https://coursera.org/verify/JSW4RS7R3XGJ"
+    },
+    {
       title: "CU Analytics & Business Intelligence",
       issuer: "Chandigarh University",
       description: "Advanced coursework covering feature engineering, predictive models, and database telemetry.",
