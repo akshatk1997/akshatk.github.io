@@ -136,7 +136,7 @@ export default function App() {
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div 
           id="cursor-glow-spotlight"
-          className="absolute w-[800px] h-[800px] rounded-full bg-gradient-to-r from-rose-500/5 to-amber-500/5 dark:from-rose-500/10 dark:to-amber-500/10 blur-3xl pointer-events-none transition-transform duration-500 ease-out"
+          className="absolute w-[800px] h-[800px] rounded-full bg-gradient-to-r from-rose-500/5 to-amber-500/5 dark:from-rose-500/10 dark:to-amber-500/10 blur-3xl pointer-events-none"
           style={{ transform: 'translate3d(-1000px, -1000px, 0)' }}
         />
       </div>

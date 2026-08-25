@@ -34,7 +34,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
       {/* Floating Menu Button (Top Left) */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-6 left-6 md:top-8 md:left-8 z-[60] p-3 rounded-full bg-white dark:bg-zinc-900 border border-gray-200 dark:border-gray-800 shadow-md hover:scale-105 active:scale-95 transition-transform duration-300 group"
+        className="fixed top-6 left-6 md:top-8 md:left-8 z-[60] p-3 rounded-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border border-gray-200 dark:border-gray-800 shadow-md hover:scale-105 active:scale-95 transition-all duration-300 group"
         aria-label="Toggle navigation menu"
       >
         {isOpen ? (
@@ -48,7 +48,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
       <div className="fixed top-6 right-6 md:top-8 md:right-8 z-[60] flex items-center gap-4 select-none">
         <button 
           onClick={toggleTheme}
-          className="p-3 rounded-full bg-white dark:bg-zinc-900 border border-gray-200 dark:border-gray-800 shadow-md hover:scale-105 active:scale-95 transition-transform duration-300 group"
+          className="p-3 rounded-full bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border border-gray-200 dark:border-gray-800 shadow-md hover:scale-105 active:scale-95 transition-all duration-300 group"
           aria-label="Toggle theme"
         >
           {theme === 'dark' ? (
@@ -63,7 +63,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
       {isOpen && (
         <div 
           onClick={() => setIsOpen(false)}
-          className="fixed inset-0 bg-black/45 dark:bg-black/60 backdrop-blur-xs z-[55] animate-fade-in"
+          className="fixed inset-0 bg-black/45 dark:bg-black/60 backdrop-blur-md z-[55] animate-fade-in"
         />
       )}
 

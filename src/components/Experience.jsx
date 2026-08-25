@@ -93,14 +93,14 @@ export default function Experience() {
           {/* Animated Gradient timeline progress line */}
           <div 
             ref={lineRef}
-            className="absolute top-0 bottom-0 left-[15px] md:left-1/2 w-[2px] bg-gradient-to-b from-[#818cf8] via-[#c084fc] to-[#fb7185] -translate-x-1/2 origin-top z-0 transition-transform duration-75 ease-out" 
+            className="absolute top-0 bottom-0 left-[15px] md:left-1/2 w-[2px] bg-gradient-to-b from-[#818cf8] via-[#c084fc] to-[#fb7185] -translate-x-1/2 origin-top z-0" 
             style={{ transform: 'scaleY(0)', transformOrigin: 'top' }}
           />
 
           {/* Glowing sliding dot */}
           <div 
             ref={dotRef}
-            className="absolute left-[15px] md:left-1/2 w-4 h-4 rounded-full bg-[#c084fc] -translate-x-1/2 border-4 border-white dark:border-slate-950 z-10 shadow-[0_0_15px_rgba(192,132,252,0.9)] transition-all duration-75 ease-out" 
+            className="absolute left-[15px] md:left-1/2 w-4 h-4 rounded-full bg-[#c084fc] -translate-x-1/2 border-4 border-white dark:border-slate-950 z-10 shadow-[0_0_15px_rgba(192,132,252,0.9)]" 
             style={{ top: '0%' }}
           />
 
