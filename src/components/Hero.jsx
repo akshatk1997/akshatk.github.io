@@ -154,12 +154,12 @@ export default function Hero() {
             {/* Profile Avatar (Front Right) */}
             <div className="shrink-0 flex justify-center md:justify-end mr-0 md:mr-10 select-none">
               <div className="relative group">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#818cf8] via-[#c084fc] to-[#fb7185] opacity-60 blur-xl group-hover:opacity-85 group-hover:blur-2xl transition-all duration-700 animate-pulse-slow" />
-                <div className="relative p-1.5 rounded-full bg-slate-900/40 backdrop-blur-md border border-white/10 group-hover:border-white/30 transition-all duration-500 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+                <div className="absolute inset-0 rounded-[2.2rem] bg-gradient-to-tr from-[#818cf8] via-[#c084fc] to-[#fb7185] opacity-60 blur-xl group-hover:opacity-85 group-hover:blur-2xl transition-all duration-700 animate-pulse-slow" />
+                <div className="relative p-1.5 rounded-[2.2rem] bg-slate-900/40 backdrop-blur-md border border-white/10 group-hover:border-white/30 transition-all duration-500 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
                   <img 
                     src="https://github.com/akshatk1997.png?v=4" 
                     alt="Akshat Kumar" 
-                    className="w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-full object-cover border border-white/20 group-hover:border-white/50 group-hover:scale-[1.03] transition-all duration-700 ease-out shadow-2xl"
+                    className="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-[1.8rem] object-cover border border-white/20 group-hover:border-white/50 group-hover:scale-[1.03] transition-all duration-700 ease-out shadow-2xl"
                     onError={(e) => {
                       e.target.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop";
                     }}
