@@ -55,12 +55,16 @@ export const portfolioConfig = {
     // The AI & Experience Stack (Drawn directly from your key skills)
     techStack: [
       { 
+        category: "Product Core", 
+        items: ["PRD & Specs", "User Stories", "Product Roadmapping", "Backlog & Sprints", "Go-to-Market (GTM)", "DevOps Automation"] 
+      },
+      { 
         category: "Product Engineering", 
         items: ["React.js", "Vite", "Tailwind CSS", "Node.js", "Python / FastAPI", "REST APIs", "Git version control", "Cloud Deployments"] 
       },
       { 
         category: "AI & Data Science", 
-        items: ["Prompt Engineering", "Tabular Transformers", "PyTorch / Scikit-Learn", "SHAP Explainability", "SQL Database Queries", "SAS Viya Analytics"] 
+        items: ["Generative AI", "Prompt Engineering", "Tabular Transformers", "PyTorch / Scikit-Learn", "SHAP Explainability", "SQL Database Queries", "SAS Viya Analytics", "Power BI"] 
       },
       { 
         category: "UX & Product Design", 
