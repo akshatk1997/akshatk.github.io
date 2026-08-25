@@ -165,15 +165,6 @@ export default function Hero() {
                     }}
                   />
                 </div>
-
-                {/* Floating organic status indicator badge */}
-                <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 bg-slate-950/90 backdrop-blur-md border border-white/15 px-3 py-1 rounded-full text-[9px] font-mono font-bold tracking-widest text-emerald-400 uppercase flex items-center gap-2 shadow-xl z-20 group-hover:border-white/30 transition-all duration-300">
-                  <span className="relative flex h-1.5 w-1.5">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400"></span>
-                  </span>
-                  <span>OPEN TO WORK</span>
-                </div>
               </div>
             </div>
           </div>
