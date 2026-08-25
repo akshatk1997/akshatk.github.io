@@ -11,10 +11,10 @@ export const portfolioConfig = {
     email: "akshatk1997@gmail.com",
     resumeUrl: "#", // Add your resume link here
     stats: [
-      { value: "1+", label: "Years of Experience" },
-      { value: "20+", label: "Projects & Prototypes" },
-      { value: "15+", label: "User Interviews & Tests" },
-      { value: "5+", label: "Technologies Mastered" }
+      { value: "3+", label: "Years of Experience" },
+      { value: "8+", label: "Completed Projects" },
+      { value: "15+", label: "A/B Tests & Studies" },
+      { value: "20+", label: "Technologies Mastered" }
     ],
     services: [
       {
@@ -198,12 +198,6 @@ export const portfolioConfig = {
       issuer: "Duke University / Coursera",
       description: "Completed course authorized by Duke University covering generative AI architectures, model capabilities, and pragmatic applications.",
       credentialUrl: "https://coursera.org/verify/JSW4RS7R3XGJ"
-    },
-    {
-      title: "CU Analytics & Business Intelligence",
-      issuer: "Chandigarh University",
-      description: "Advanced coursework covering feature engineering, predictive models, and database telemetry.",
-      credentialUrl: "https://chandigarhuniversity.ac.in"
     }
   ],
 

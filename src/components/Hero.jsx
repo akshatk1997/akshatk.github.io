@@ -2,6 +2,58 @@ import React, { useState, useEffect } from 'react';
 import { Sparkles, Code, Layout } from 'lucide-react';
 import { portfolioConfig } from '../portfolio.config';
 
+// Sub-component for matrix scrambled dynamic counter animation
+function AnimatedStat({ targetValue, label }) {
+  const [displayValue, setDisplayValue] = useState('---');
+  const [isDone, setIsDone] = useState(false);
+
+  useEffect(() => {
+    const numericPart = parseInt(targetValue.match(/\d+/)?.[0] || '0', 10);
+    const suffix = targetValue.replace(/\d+/g, '');
+    
+    let frame = 0;
+    const duration = 30; // 30 frames total
+    const chars = "0123456789%X#$@&";
+
+    const interval = setInterval(() => {
+      frame++;
+      
+      if (frame < 18) {
+        let scrambled = "";
+        for (let i = 0; i < String(numericPart).length; i++) {
+          scrambled += chars[Math.floor(Math.random() * chars.length)];
+        }
+        setDisplayValue(scrambled + suffix);
+      } else {
+        const progress = (frame - 18) / (duration - 18);
+        const currentCount = Math.floor(progress * numericPart);
+        setDisplayValue(currentCount + suffix);
+      }
+
+      if (frame >= duration) {
+        clearInterval(interval);
+        setDisplayValue(targetValue);
+        setIsDone(true);
+      }
+    }, 45);
+
+    return () => clearInterval(interval);
+  }, [targetValue]);
+
+  return (
+    <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-4 text-center sm:text-left select-none">
+      <h2 className={`text-3xl sm:text-5xl font-extrabold transition-all duration-300 font-mono ${isDone ? 'text-white' : 'text-[#818cf8] animate-pulse'}`}>
+        {displayValue}
+      </h2>
+      <p className="text-gray-400 text-[9px] sm:text-xs font-semibold tracking-wider uppercase leading-tight">
+        {label.split(' ').slice(0, 2).join(' ')}
+        <br />
+        {label.split(' ').slice(2).join(' ')}
+      </p>
+    </div>
+  );
+}
+
 export default function Hero() {
   const { profile } = portfolioConfig;
 
@@ -73,19 +125,11 @@ export default function Hero() {
           <div className="relative z-10 px-4 sm:px-6 pb-6">
             <div className="bg-black rounded-[2rem] p-6 sm:p-10 w-full grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 border border-white/5">
               {profile.stats.map((stat, sIdx) => (
-                <div 
-                  key={sIdx} 
-                  className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-2 sm:gap-4 text-center sm:text-left select-none"
-                >
-                  <h2 className="text-white text-3xl sm:text-5xl font-extrabold">
-                    {stat.value}
-                  </h2>
-                  <p className="text-gray-400 text-[9px] sm:text-xs font-semibold tracking-wider uppercase leading-tight">
-                    {stat.label.split(' ').slice(0, 2).join(' ')}
-                    <br />
-                    {stat.label.split(' ').slice(2).join(' ')}
-                  </p>
-                </div>
+                <AnimatedStat 
+                  key={sIdx}
+                  targetValue={stat.value}
+                  label={stat.label}
+                />
               ))}
             </div>
           </div>
