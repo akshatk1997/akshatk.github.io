@@ -13,8 +13,8 @@ export default function Certifications() {
       className="py-32 bg-white dark:bg-slate-950 text-gray-900 dark:text-white transition-colors duration-300 relative w-full border-t border-gray-150 dark:border-zinc-900/60 overflow-hidden"
     >
       {/* Blurred background ambient glows */}
-      <div className="absolute top-1/4 left-1/3 w-[300px] h-[300px] rounded-full bg-[#818cf8]/5 dark:bg-[#818cf8]/3 blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-1/4 right-1/3 w-[350px] h-[350px] rounded-full bg-[#fb7185]/5 dark:bg-[#fb7185]/3 blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/4 left-1/3 w-[300px] h-[300px] rounded-full bg-[#818cf8]/5 dark:bg-[#818cf8]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
+      <div className="absolute bottom-1/4 right-1/3 w-[350px] h-[350px] rounded-full bg-[#fb7185]/5 dark:bg-[#fb7185]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         

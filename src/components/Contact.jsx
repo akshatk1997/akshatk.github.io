@@ -170,7 +170,7 @@ export default function Contact() {
 
           {/* Copyright centered at the bottom */}
           <p className="copyright text-slate-500 dark:text-gray-400 font-bold">
-            2026 akshat kumar. all rights reserved.
+            © 2026 akshat kumar. all rights reserved.
           </p>
 
           <div className="text-center font-serif-display italic text-[11px] text-slate-400 dark:text-gray-500 tracking-wide max-w-md leading-relaxed pt-1.5 border-t border-zinc-200/50 dark:border-zinc-800/40 w-full">

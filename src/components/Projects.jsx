@@ -52,6 +52,9 @@ export default function Projects() {
       id="projects" 
       className="relative py-32 bg-white dark:bg-slate-950 text-gray-900 dark:text-white transition-colors duration-300 overflow-hidden w-full border-t border-gray-150 dark:border-zinc-900/60"
     >
+      {/* Ambient background glows */}
+      <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] rounded-full bg-[#fb7185]/5 dark:bg-[#fb7185]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
+      <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] rounded-full bg-[#c084fc]/5 dark:bg-[#c084fc]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         
         <span className="block text-2xl text-gray-650 dark:text-gray-400 text-center font-mono font-bold mb-2 animate-fade-in">
