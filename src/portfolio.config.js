@@ -166,10 +166,22 @@ export const portfolioConfig = {
       credentialUrl: "https://coursera.org"
     },
     {
-      title: "SAS Viya Analytics & SQL Specialist",
+      title: "Machine Learning Using SAS Viya",
       issuer: "SAS Institute",
       description: "Credential in querying complex databases, dataset modeling, and performing machine learning on SAS platforms.",
-      credentialUrl: "https://sas.com"
+      credentialUrl: "https://www.credly.com/badges/bd4667ce-bab8-4956-8466-1a36503a28c5/public_url"
+    },
+    {
+      title: "Copado Certified Copado AI",
+      issuer: "Copado",
+      description: "Professional credential for Salesforce DevOps automation and implementing Copado AI assistant features.",
+      credentialUrl: "https://copado.com"
+    },
+    {
+      title: "Financial Services & Banking Simulation",
+      issuer: "PNC Bank / Forage",
+      description: "Virtual job experience covering retail banking focus, exploring financial services industries, and advisory strategies.",
+      credentialUrl: "https://theforage.com"
     },
     {
       title: "DeepLearning.AI Prompt Engineering",
