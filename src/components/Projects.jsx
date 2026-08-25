@@ -50,7 +50,7 @@ export default function Projects() {
   return (
     <section 
       id="projects" 
-      className="relative py-32 bg-white dark:bg-[#1a1625] text-gray-900 dark:text-white transition-colors duration-300 overflow-hidden w-full border-t border-gray-150 dark:border-zinc-900/60"
+      className="relative py-32 bg-white dark:bg-slate-950 text-gray-900 dark:text-white transition-colors duration-300 overflow-hidden w-full border-t border-gray-150 dark:border-zinc-900/60"
     >
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         

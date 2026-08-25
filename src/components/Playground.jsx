@@ -145,7 +145,7 @@ export default function Playground() {
   return (
     <section 
       id="playground" 
-      className="py-32 px-4 md:px-6 max-w-5xl mx-auto space-y-16 border-t border-gray-150 dark:border-zinc-900/60 w-full bg-white dark:bg-[#1a1625] text-gray-900 dark:text-white transition-colors duration-300 relative overflow-hidden"
+      className="py-32 px-4 md:px-6 max-w-5xl mx-auto space-y-16 border-t border-gray-150 dark:border-zinc-900/60 w-full bg-white dark:bg-slate-950 text-gray-900 dark:text-white transition-colors duration-300 relative overflow-hidden"
     >
       {/* Ambient background glows */}
       <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] rounded-full bg-[#c084fc]/5 dark:bg-[#c084fc]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />

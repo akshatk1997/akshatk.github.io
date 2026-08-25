@@ -67,7 +67,7 @@ export default function Experience() {
     <section 
       ref={sectionRef}
       id="experience" 
-      className="w-full relative z-0 py-32 bg-white dark:bg-[#1a1625] text-gray-900 dark:text-white transition-colors duration-300 border-t border-gray-150 dark:border-zinc-900/60 overflow-hidden"
+      className="w-full relative z-0 py-32 bg-white dark:bg-slate-950 text-gray-900 dark:text-white transition-colors duration-300 border-t border-gray-150 dark:border-zinc-900/60 overflow-hidden"
     >
       {/* Blurred background glow blobs for cool ambient glow */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-[350px] h-[350px] rounded-full bg-[#fb7185]/5 dark:bg-[#fb7185]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
@@ -100,7 +100,7 @@ export default function Experience() {
           {/* Glowing sliding dot */}
           <div 
             ref={dotRef}
-            className="absolute left-[15px] md:left-1/2 w-4 h-4 rounded-full bg-[#c084fc] -translate-x-1/2 border-4 border-white dark:border-[#1a1625] z-10 shadow-[0_0_15px_rgba(192,132,252,0.9)] transition-all duration-75 ease-out" 
+            className="absolute left-[15px] md:left-1/2 w-4 h-4 rounded-full bg-[#c084fc] -translate-x-1/2 border-4 border-white dark:border-slate-950 z-10 shadow-[0_0_15px_rgba(192,132,252,0.9)] transition-all duration-75 ease-out" 
             style={{ top: '0%' }}
           />
 
@@ -131,7 +131,7 @@ export default function Experience() {
 
                   {/* Right Side (Desktop): Timeline Card */}
                   <div className="w-full md:w-1/2 pl-0 md:pl-12 lg:pl-16 shrink-0 z-10 text-left">
-                    <div className="group bg-white/90 dark:bg-[#1a1625]/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-700/50 shadow-sm hover:shadow-xl hover:border-[#c084fc]/50 transition-all duration-500 cursor-pointer">
+                    <div className="group bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-zinc-200 dark:border-zinc-700/50 shadow-sm hover:shadow-xl hover:border-[#c084fc]/50 transition-all duration-500 cursor-pointer">
                       
                       {/* Date Header */}
                       <div className="flex items-center gap-2 text-[#c084fc] font-bold mb-3 select-none">

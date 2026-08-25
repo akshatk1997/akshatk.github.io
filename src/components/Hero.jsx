@@ -21,7 +21,7 @@ export default function Hero() {
   return (
     <section 
       id="hero" 
-      className="w-full relative z-0 animate-slide-up-fade pt-28 sm:pt-32 pb-10 bg-white dark:bg-[#1a1625] text-gray-900 dark:text-white transition-colors duration-300 overflow-hidden"
+      className="w-full relative z-0 animate-slide-up-fade pt-28 sm:pt-32 pb-10 bg-white dark:bg-slate-950 text-gray-900 dark:text-white transition-colors duration-300 overflow-hidden"
     >
       {/* Ambient blurred backdrop glows */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#818cf8]/5 dark:bg-[#818cf8]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />

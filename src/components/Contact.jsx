@@ -35,7 +35,7 @@ export default function Contact() {
       id="contact" 
       className="w-full relative z-0 border-none m-0 p-0"
     >
-      <div className="bg-gradient-to-b from-slate-50 to-indigo-50/60 dark:from-[#1a1625] dark:to-[#0b0f19] flex items-center justify-center py-24 md:py-32 px-6 transition-colors duration-300">
+      <div className="bg-gradient-to-b from-slate-50 to-indigo-50/60 dark:from-slate-950 dark:to-slate-900 flex items-center justify-center py-24 md:py-32 px-6 transition-colors duration-300">
         <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8 items-center">
           
           {/* Left Column: Heading and Contact Copier */}

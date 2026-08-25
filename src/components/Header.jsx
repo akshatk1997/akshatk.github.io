@@ -34,7 +34,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
       {/* Floating Menu Button (Top Left) */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-6 left-6 md:top-8 md:left-8 z-[60] p-3 rounded-full bg-white dark:bg-[#1A1625] border border-gray-200 dark:border-gray-800 shadow-md hover:scale-105 active:scale-95 transition-transform duration-300 group"
+        className="fixed top-6 left-6 md:top-8 md:left-8 z-[60] p-3 rounded-full bg-white dark:bg-zinc-900 border border-gray-200 dark:border-gray-800 shadow-md hover:scale-105 active:scale-95 transition-transform duration-300 group"
         aria-label="Toggle navigation menu"
       >
         {isOpen ? (
@@ -48,7 +48,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
       <div className="fixed top-6 right-6 md:top-8 md:right-8 z-[60] flex items-center gap-4 select-none">
         <button 
           onClick={toggleTheme}
-          className="p-3 rounded-full bg-white dark:bg-[#1A1625] border border-gray-200 dark:border-gray-800 shadow-md hover:scale-105 active:scale-95 transition-transform duration-300 group"
+          className="p-3 rounded-full bg-white dark:bg-zinc-900 border border-gray-200 dark:border-gray-800 shadow-md hover:scale-105 active:scale-95 transition-transform duration-300 group"
           aria-label="Toggle theme"
         >
           {theme === 'dark' ? (
@@ -69,7 +69,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
 
       {/* Side Navigation Drawer */}
       <div 
-        className={`fixed top-0 left-0 bottom-0 w-80 max-w-[80vw] bg-white dark:bg-[#1a1625] border-r border-gray-200/80 dark:border-gray-800/80 z-[58] p-8 md:p-10 flex flex-col justify-between transition-transform duration-500 shadow-2xl select-none ${
+        className={`fixed top-0 left-0 bottom-0 w-80 max-w-[80vw] bg-white dark:bg-zinc-950 border-r border-gray-200/80 dark:border-gray-800/80 z-[58] p-8 md:p-10 flex flex-col justify-between transition-transform duration-500 shadow-2xl select-none ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >

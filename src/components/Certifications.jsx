@@ -10,7 +10,7 @@ export default function Certifications() {
   return (
     <section 
       id="certifications" 
-      className="py-32 bg-white dark:bg-[#1a1625] text-gray-900 dark:text-white transition-colors duration-300 relative w-full border-t border-gray-150 dark:border-zinc-900/60 overflow-hidden"
+      className="py-32 bg-white dark:bg-slate-950 text-gray-900 dark:text-white transition-colors duration-300 relative w-full border-t border-gray-150 dark:border-zinc-900/60 overflow-hidden"
     >
       {/* Blurred background ambient glows */}
       <div className="absolute top-1/4 left-1/3 w-[300px] h-[300px] rounded-full bg-[#818cf8]/5 dark:bg-[#818cf8]/3 blur-3xl pointer-events-none -z-10" />

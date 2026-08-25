@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section 
       id="about" 
-      className="py-32 bg-white dark:bg-[#1a1625] text-gray-900 dark:text-white transition-colors duration-300 relative w-full overflow-hidden"
+      className="py-32 bg-white dark:bg-slate-950 text-gray-900 dark:text-white transition-colors duration-300 relative w-full overflow-hidden"
     >
       {/* Blurred background glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-[#c084fc]/5 dark:bg-[#c084fc]/3 blur-3xl pointer-events-none -z-10" />
