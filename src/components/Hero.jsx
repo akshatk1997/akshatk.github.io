@@ -124,30 +124,49 @@ export default function Hero() {
           <div className="absolute inset-0 bg-black/45 dark:bg-black/60 z-0"></div>
 
           {/* Banner Copy (Top) */}
-          <div className="relative z-10 pt-20 px-8 sm:px-16 pb-10">
-            <p className="text-white/95 text-base sm:text-lg font-mono font-bold tracking-wider mb-3 uppercase">
-              {profile.title}
-            </p>
-            <h1 className="text-white text-5xl sm:text-7xl md:text-[96px] font-black leading-[0.95] tracking-tighter select-none max-w-4xl min-h-[160px] sm:min-h-[220px] md:min-h-[280px] flex flex-col justify-start">
-              <span>
-                {line1}
-                {line1.length < fullLine1.length && (
-                  <span className="border-r-4 border-white animate-pulse ml-1">&nbsp;</span>
-                )}
-              </span>
-              <span>
-                {line2}
-                {line1.length === fullLine1.length && line2.length < fullLine2.length && (
-                  <span className="border-r-4 border-white animate-pulse ml-1">&nbsp;</span>
-                )}
-              </span>
-              <span>
-                {line3}
-                {line2.length === fullLine2.length && line3.length < fullLine3.length && (
-                  <span className="border-r-4 border-white animate-pulse ml-1">&nbsp;</span>
-                )}
-              </span>
-            </h1>
+          <div className="relative z-10 pt-20 px-8 sm:px-16 pb-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+            <div className="flex-grow">
+              <p className="text-white/95 text-base sm:text-lg font-mono font-bold tracking-wider mb-3 uppercase">
+                {profile.title}
+              </p>
+              <h1 className="text-white text-5xl sm:text-7xl md:text-[96px] font-black leading-[0.95] tracking-tighter select-none max-w-4xl min-h-[160px] sm:min-h-[220px] md:min-h-[280px] flex flex-col justify-start">
+                <span>
+                  {line1}
+                  {line1.length < fullLine1.length && (
+                    <span className="border-r-4 border-white animate-pulse ml-1">&nbsp;</span>
+                  )}
+                </span>
+                <span>
+                  {line2}
+                  {line1.length === fullLine1.length && line2.length < fullLine2.length && (
+                    <span className="border-r-4 border-white animate-pulse ml-1">&nbsp;</span>
+                  )}
+                </span>
+                <span>
+                  {line3}
+                  {line2.length === fullLine2.length && line3.length < fullLine3.length && (
+                    <span className="border-r-4 border-white animate-pulse ml-1">&nbsp;</span>
+                  )}
+                </span>
+              </h1>
+            </div>
+
+            {/* Profile Avatar (Front Right) */}
+            <div className="shrink-0 flex justify-center md:justify-end mr-0 md:mr-10 select-none">
+              <div className="relative group">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#818cf8] via-[#c084fc] to-[#fb7185] opacity-75 blur-md group-hover:opacity-100 transition-opacity duration-500 animate-pulse-slow" />
+                <div className="relative p-1 rounded-full bg-black/40 backdrop-blur-md border border-white/10">
+                  <img 
+                    src="https://github.com/akshatk1997.png" 
+                    alt="Akshat Kumar" 
+                    className="w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-full object-cover border-2 border-white/25 group-hover:border-white/60 transition-colors duration-500 shadow-2xl"
+                    onError={(e) => {
+                      e.target.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop";
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Black Stats Container (Bottom) */}

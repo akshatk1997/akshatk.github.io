@@ -174,7 +174,7 @@ export default function Contact() {
           </p>
 
           <div className="text-center font-serif-display italic text-[11px] text-slate-400 dark:text-gray-500 tracking-wide max-w-md leading-relaxed pt-1.5 border-t border-zinc-200/50 dark:border-zinc-800/40 w-full">
-            "Behind every line of code, there is a human heartbeat waiting to connect."
+            "behind every line, there is a human heart waiting to connect."
           </div>
         </div>
       </footer>

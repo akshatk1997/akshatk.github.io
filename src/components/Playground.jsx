@@ -16,6 +16,54 @@ export default function Playground() {
   const [selectedEmoji, setSelectedEmoji] = useState('✨');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Widget Toggle & Bug Hunter Game States
+  const [activeWidget, setActiveWidget] = useState('mood'); // mood | game
+  const [gameState, setGameState] = useState('idle'); // idle | playing | ended
+  const [gameScore, setGameScore] = useState(0);
+  const [highScore, setHighScore] = useState(() => {
+    return parseInt(localStorage.getItem('bug-hunter-highscore') || '0', 10);
+  });
+  const [timeLeft, setTimeLeft] = useState(15);
+  const [bugPosition, setBugPosition] = useState({ top: '50%', left: '50%' });
+
+  // Game timer loop
+  useEffect(() => {
+    if (gameState !== 'playing') return;
+
+    if (timeLeft <= 0) {
+      setGameState('ended');
+      if (gameScore > highScore) {
+        setHighScore(gameScore);
+        localStorage.setItem('bug-hunter-highscore', gameScore.toString());
+      }
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setTimeLeft(prev => prev - 1);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [timeLeft, gameState]);
+
+  // Bug click handler
+  const handleBugClick = () => {
+    setGameScore(prev => prev + 1);
+    const randomTop = Math.floor(Math.random() * 70) + 15;
+    const randomLeft = Math.floor(Math.random() * 70) + 15;
+    setBugPosition({ top: `${randomTop}%`, left: `${randomLeft}%` });
+  };
+
+  // Start game handler
+  const startGame = () => {
+    setGameScore(0);
+    setTimeLeft(15);
+    setGameState('playing');
+    const randomTop = Math.floor(Math.random() * 70) + 15;
+    const randomLeft = Math.floor(Math.random() * 70) + 15;
+    setBugPosition({ top: `${randomTop}%`, left: `${randomLeft}%` });
+  };
+
   // Focus Tracks List
   const tracks = [
     { 
@@ -168,39 +216,131 @@ export default function Playground() {
         {/* Mood and Sound Card */}
         <div className="space-y-8 flex flex-col">
           
-          {/* Mood Section */}
-          <div className="bg-white dark:bg-zinc-800/40 backdrop-blur-md rounded-[2.2rem] p-6 md:p-8 border border-zinc-200 dark:border-zinc-700/50 shadow-sm hover:shadow-2xl hover:border-[#c084fc]/30 transition-all duration-500 flex-1">
-            <div className="space-y-2 text-left">
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2 select-none">
-                <Smile className="text-[#c084fc]" size={18} /> How is your energy today?
-              </h3>
-              <p className="text-xs text-gray-500 dark:text-zinc-400 font-light">
-                Tell me how you're feeling and get a small personalized note back.
-              </p>
-            </div>
-            
-            <div className="flex flex-wrap gap-2.5 mt-6">
-              {moods.map((m) => (
+          {/* Mood & Game Card */}
+          <div className="bg-white dark:bg-zinc-800/40 backdrop-blur-md rounded-[2.2rem] p-6 md:p-8 border border-zinc-200 dark:border-zinc-700/50 shadow-sm hover:shadow-2xl hover:border-[#c084fc]/30 transition-all duration-500 flex-1 flex flex-col justify-between">
+            <div>
+              {/* Tab Selector */}
+              <div className="flex gap-2 mb-6 bg-gray-50 dark:bg-zinc-900/60 p-1.5 rounded-2xl border dark:border-zinc-800/80 w-fit select-none mx-auto sm:mx-0">
                 <button
-                  key={m.id}
-                  onClick={() => handleMoodSelect(m.id)}
-                  className={`px-3.5 py-2 rounded-full text-xs font-semibold border flex items-center gap-1.5 transition-all duration-300 select-none ${
-                    selectedMood === m.id
-                      ? 'bg-[#c084fc]/10 border-[#c084fc] text-[#c084fc] shadow-sm'
-                      : 'bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-gray-600 dark:text-gray-400 hover:border-[#c084fc]/50'
+                  type="button"
+                  onClick={() => setActiveWidget('mood')}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${
+                    activeWidget === 'mood'
+                      ? 'bg-[#c084fc] text-white shadow-md'
+                      : 'text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200'
                   }`}
                 >
-                  <span className="text-sm select-none">{m.emoji}</span>
-                  <span>{m.label}</span>
+                  Energy Check
                 </button>
-              ))}
-            </div>
-
-            {selectedMood && (
-              <div className="p-4 rounded-2xl bg-[#c084fc]/5 dark:bg-[#c084fc]/10 border border-[#c084fc]/15 dark:border-[#c084fc]/20 text-xs md:text-sm text-gray-700 dark:text-zinc-300 leading-relaxed font-light mt-6 animate-fade-in">
-                {moodMessage}
+                <button
+                  type="button"
+                  onClick={() => setActiveWidget('game')}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 ${
+                    activeWidget === 'game'
+                      ? 'bg-[#c084fc] text-white shadow-md'
+                      : 'text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200'
+                  }`}
+                >
+                  Bug Hunter 🐛
+                </button>
               </div>
-            )}
+
+              {activeWidget === 'mood' ? (
+                <>
+                  <div className="space-y-2 text-left">
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white flex items-center gap-2 select-none">
+                      <Smile className="text-[#c084fc]" size={18} /> How is your energy today?
+                    </h3>
+                    <p className="text-xs text-gray-500 dark:text-zinc-400 font-light">
+                      Tell me how you're feeling and get a small personalized note back.
+                    </p>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2.5 mt-6">
+                    {moods.map((m) => (
+                      <button
+                        key={m.id}
+                        onClick={() => handleMoodSelect(m.id)}
+                        className={`px-3.5 py-2 rounded-full text-xs font-semibold border flex items-center gap-1.5 transition-all duration-300 select-none ${
+                          selectedMood === m.id
+                            ? 'bg-[#c084fc]/10 border-[#c084fc] text-[#c084fc] shadow-sm'
+                            : 'bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 text-gray-650 dark:text-gray-400 hover:border-[#c084fc]/50'
+                        }`}
+                      >
+                        <span className="text-sm select-none">{m.emoji}</span>
+                        <span>{m.label}</span>
+                      </button>
+                    ))}
+                  </div>
+
+                  {selectedMood && (
+                    <div className="p-4 rounded-2xl bg-[#c084fc]/5 dark:bg-[#c084fc]/10 border border-[#c084fc]/15 dark:border-[#c084fc]/20 text-xs md:text-sm text-gray-700 dark:text-zinc-300 leading-relaxed font-light mt-6 animate-fade-in">
+                      {moodMessage}
+                    </div>
+                  )}
+                </>
+              ) : (
+                /* Bug Hunter Retro Game */
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center bg-gray-950 text-[#818cf8] p-3 rounded-xl border border-zinc-850 font-mono text-[10px] select-none">
+                    <span>STATUS: {gameState === 'playing' ? 'COMPILING...' : 'IDLE'}</span>
+                    <span>HIGH SCORE: {highScore}</span>
+                  </div>
+                  
+                  <div className="relative h-44 bg-zinc-950 rounded-2xl border border-zinc-850 overflow-hidden flex flex-col items-center justify-center">
+                    {gameState === 'idle' && (
+                      <div className="text-center space-y-3 p-4">
+                        <p className="text-xs text-gray-400 font-light max-w-[240px]">
+                          Bugs are creeping into the build! How many bugs can you smash in 15 seconds?
+                        </p>
+                        <button
+                          type="button"
+                          onClick={startGame}
+                          className="px-4 py-2 bg-[#c084fc] hover:bg-[#b06ee0] text-white text-xs font-bold rounded-xl transition-transform duration-200 active:scale-95 shadow-md shadow-[#c084fc]/15"
+                        >
+                          START HUNT
+                        </button>
+                      </div>
+                    )}
+
+                    {gameState === 'playing' && (
+                      <>
+                        <div className="absolute top-2.5 left-3 text-[10px] font-mono text-emerald-400 select-none">
+                          SMASHED: {gameScore}
+                        </div>
+                        <div className="absolute top-2.5 right-3 text-[10px] font-mono text-rose-400 select-none">
+                          TIME: {timeLeft}s
+                        </div>
+                        <button
+                          type="button"
+                          onClick={handleBugClick}
+                          style={{ top: bugPosition.top, left: bugPosition.left }}
+                          className="absolute p-3 bg-rose-500/10 hover:bg-rose-500/20 text-rose-500 border border-rose-500/35 rounded-xl transition-all duration-100 active:scale-90 select-none cursor-crosshair transform -translate-x-1/2 -translate-y-1/2 text-lg"
+                        >
+                          🐛
+                        </button>
+                      </>
+                    )}
+
+                    {gameState === 'ended' && (
+                      <div className="text-center space-y-3 p-4">
+                        <h4 className="text-sm font-bold text-white uppercase tracking-wider">Compile Complete!</h4>
+                        <p className="text-xs text-gray-400 font-light">
+                          You smashed <span className="text-emerald-400 font-bold">{gameScore}</span> bugs.
+                        </p>
+                        <button
+                          type="button"
+                          onClick={startGame}
+                          className="px-4 py-2 bg-[#c084fc] hover:bg-[#b06ee0] text-white text-xs font-bold rounded-xl transition-transform duration-200 active:scale-95 shadow-md shadow-[#c084fc]/15"
+                        >
+                          RETRY
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Soundtrack Section */}
