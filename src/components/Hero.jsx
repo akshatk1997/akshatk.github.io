@@ -124,8 +124,8 @@ export default function Hero() {
           <div className="absolute inset-0 bg-black/45 dark:bg-black/60 z-0"></div>
 
           {/* Banner Copy (Top) */}
-          <div className="relative z-10 pt-20 px-8 sm:px-16 pb-10 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-            <div className="flex-grow">
+          <div className="relative z-10 pt-20 px-8 sm:px-16 pb-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+            <div className="flex-grow max-w-3xl">
               <p className="text-white/95 text-base sm:text-lg font-mono font-bold tracking-wider mb-3 uppercase">
                 {profile.title}
               </p>
@@ -149,10 +149,25 @@ export default function Hero() {
                   )}
                 </span>
               </h1>
+
+              {/* Relatable Mobile/Tablet Quote */}
+              <div className="lg:hidden mt-6 pl-4 border-l border-indigo-400/30 select-none">
+                <p className="text-white/60 text-xs italic font-serif-display leading-relaxed">
+                  "Making machines think, and interfaces feel."
+                </p>
+              </div>
+            </div>
+
+            {/* Middle Quote Column (Desktop Only) */}
+            <div className="hidden lg:flex flex-col justify-center max-w-[220px] border-l border-white/10 pl-8 select-none animate-fade-in py-2 shrink-0">
+              <p className="text-[10px] font-mono tracking-widest text-[#818cf8] uppercase mb-2 font-bold">Focus</p>
+              <p className="text-white/70 text-sm italic font-serif-display leading-relaxed">
+                "Making machines think, and interfaces feel."
+              </p>
             </div>
 
             {/* Profile Avatar (Front Right) */}
-            <div className="shrink-0 flex justify-center md:justify-end mr-0 md:mr-10 select-none">
+            <div className="shrink-0 flex justify-center lg:justify-end select-none">
               <div className="relative group">
                 <div className="absolute inset-0 rounded-[2.2rem] bg-gradient-to-tr from-[#818cf8] via-[#c084fc] to-[#fb7185] opacity-60 blur-xl group-hover:opacity-85 group-hover:blur-2xl transition-all duration-700 animate-pulse-slow" />
                 <div className="relative p-1.5 rounded-[2.2rem] bg-slate-900/40 backdrop-blur-md border border-white/10 group-hover:border-white/30 transition-all duration-500 shadow-[0_0_50px_rgba(0,0,0,0.5)]">
