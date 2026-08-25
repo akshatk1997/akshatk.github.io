@@ -51,14 +51,14 @@ export default function Skills() {
         <span className="block text-2xl text-gray-650 dark:text-gray-400 text-center font-mono font-bold mb-2 animate-fade-in">
           Explore
         </span>
-        <header className="mb-12">
+        <header className="mb-12 reveal">
           <h1 className="text-center text-4xl md:text-5xl font-black bg-gradient-to-r from-[#818cf8] via-[#c084fc] to-[#fb7185] text-transparent bg-clip-text">
             My Skills
           </h1>
         </header>
 
         {/* 3-Box Layout Grid matching the reference layout dimensions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 reveal">
           
           {/* Box 1: Product Engineering */}
           <div className="group bg-white dark:bg-zinc-900/40 backdrop-blur-md rounded-[2rem] p-8 border border-zinc-200/80 dark:border-zinc-800/80 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 col-span-1 flex flex-col">

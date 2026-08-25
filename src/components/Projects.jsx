@@ -60,14 +60,14 @@ export default function Projects() {
         <span className="block text-2xl text-gray-650 dark:text-gray-400 text-center font-mono font-bold mb-2 animate-fade-in">
           Explore
         </span>
-        <header className="mb-12">
+        <header className="mb-12 reveal">
           <h1 className="text-center text-4xl md:text-5xl font-black bg-gradient-to-r from-[#818cf8] via-[#c084fc] to-[#fb7185] text-transparent bg-clip-text">
             My Recent Works
           </h1>
         </header>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12 select-none">
+        <div className="flex flex-wrap justify-center gap-3 mb-12 select-none reveal">
           {categories.map((category) => (
             <button
               key={category}
@@ -84,7 +84,7 @@ export default function Projects() {
         </div>
 
         {/* Swiper track navigation buttons (visible if project count exists) */}
-        <div className="relative group px-2">
+        <div className="relative group px-2 reveal">
           {filtered.length > 0 && (
             <>
               <button 

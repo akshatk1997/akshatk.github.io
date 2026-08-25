@@ -21,14 +21,14 @@ export default function Certifications() {
         <span className="block text-2xl text-gray-650 dark:text-gray-400 text-center font-mono font-bold mb-2 animate-fade-in select-none">
           Credentials
         </span>
-        <header className="mb-16">
+        <header className="mb-16 reveal">
           <h1 className="text-center text-4xl md:text-5xl font-black bg-gradient-to-r from-[#818cf8] via-[#c084fc] to-[#fb7185] text-transparent bg-clip-text">
             Certifications & Training
           </h1>
         </header>
 
         {/* Credentials Grid */}
-        <div className="grid md:grid-cols-2 gap-6 pt-4 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 pt-4 max-w-6xl mx-auto reveal">
           {certifications.map((cert, idx) => (
             <div 
               key={idx} 

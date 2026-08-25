@@ -151,7 +151,7 @@ export default function Playground() {
       <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] rounded-full bg-[#c084fc]/5 dark:bg-[#c084fc]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
       <div className="absolute bottom-1/3 right-1/3 w-[300px] h-[300px] rounded-full bg-[#818cf8]/5 dark:bg-[#818cf8]/3 blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
 
-      <div className="text-center space-y-3 max-w-2xl mx-auto relative z-10">
+      <div className="text-center space-y-3 max-w-2xl mx-auto relative z-10 reveal">
         <span className="block text-2xl text-gray-650 dark:text-gray-400 text-center font-mono font-bold mb-2 animate-fade-in select-none">
           Interactive
         </span>
@@ -163,7 +163,7 @@ export default function Playground() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8 items-stretch pt-4 relative z-10">
+      <div className="grid md:grid-cols-2 gap-8 items-stretch pt-4 relative z-10 reveal">
         
         {/* Mood and Sound Card */}
         <div className="space-y-8 flex flex-col">

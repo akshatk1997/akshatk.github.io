@@ -57,6 +57,36 @@ export default function App() {
     };
   }, []);
 
+  // Scroll reveal IntersectionObserver to animate content into view
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -10% 0px', // trigger slightly before entering viewport
+      threshold: 0.05,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Initial timeout to let page load and components mount cleanly
+    const timer = setTimeout(() => {
+      const elements = document.querySelectorAll('.reveal');
+      elements.forEach((el) => observer.observe(el));
+    }, 100);
+
+    return () => {
+      clearTimeout(timer);
+      const elements = document.querySelectorAll('.reveal');
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   // Section scroll-spy using IntersectionObserver (buttery smooth compositor thread calculations)
   useEffect(() => {
     const sections = ['hero', 'about', 'techstack', 'experience', 'projects', 'certifications', 'playground', 'contact'];

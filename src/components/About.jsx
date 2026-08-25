@@ -18,14 +18,14 @@ export default function About() {
         <span className="block text-2xl text-gray-650 dark:text-gray-400 text-center font-mono font-bold mb-4 animate-fade-in">
           Discover
         </span>
-        <header className="mb-16">
+        <header className="mb-16 reveal">
           <h1 className="text-center text-4xl sm:text-5xl font-black bg-gradient-to-r from-[#818cf8] via-[#c084fc] to-[#fb7185] text-transparent bg-clip-text">
             About Me
           </h1>
         </header>
 
         {/* The Three Colorful Cards Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch pt-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch pt-4 reveal">
           
           {/* Card 1: Background (Amber Gold Glass) */}
           <div className="flex flex-col justify-between min-h-[380px] bg-amber-500/5 dark:bg-amber-950/10 border border-amber-500/15 dark:border-amber-500/20 p-8 sm:p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl hover:border-amber-500/35 hover:-translate-y-3 transition-all duration-500 text-slate-800 dark:text-amber-250">
