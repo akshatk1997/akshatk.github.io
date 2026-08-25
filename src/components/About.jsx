@@ -19,7 +19,7 @@ export default function About() {
           Discover
         </span>
         <header className="mb-16">
-          <h1 className="text-center text-4xl sm:text-5xl font-black bg-gradient-to-r from-[#ff4d8d] to-[#40c9ff] text-transparent bg-clip-text">
+          <h1 className="text-center text-4xl sm:text-5xl font-black bg-gradient-to-r from-[#818cf8] via-[#c084fc] to-[#fb7185] text-transparent bg-clip-text">
             About Me
           </h1>
         </header>

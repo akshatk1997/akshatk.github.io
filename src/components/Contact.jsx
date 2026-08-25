@@ -123,7 +123,7 @@ export default function Contact() {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       rows="5"
-                      className="w-full bg-transparent border border-[#eedda2]/20 dark:border-[#2b281f] focus:border-[#ff4d8d]/50 dark:focus:border-[#ff4d8d]/50 rounded-xl p-3 outline-none text-[#3a3523] dark:text-[#ebdca2] font-serif-display italic leading-relaxed resize-none transition-all"
+                      className="w-full bg-transparent border border-[#eedda2]/20 dark:border-[#2b281f] focus:border-[#c084fc]/50 dark:focus:border-[#c084fc]/50 rounded-xl p-3 outline-none text-[#3a3523] dark:text-[#ebdca2] font-serif-display italic leading-relaxed resize-none transition-all"
                       required
                     />
                   </div>

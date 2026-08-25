@@ -1,5 +1,9 @@
 import React from 'react';
-import { Layers, Code, Cpu, Database, PenTool, Sparkles, Terminal, Globe } from 'lucide-react';
+import { 
+  Atom, Zap, Wind, Cpu, Binary, Link2, GitBranch, Cloud,
+  MessageSquareCode, Network, Workflow, Eye, Database, BarChart3,
+  Figma, Smartphone, Users, UserCheck, GitFork, CheckSquare, Sparkles 
+} from 'lucide-react';
 import { portfolioConfig } from '../portfolio.config';
 
 export default function Skills() {
@@ -7,24 +11,33 @@ export default function Skills() {
 
   const getSkillIcon = (name) => {
     const n = name.toLowerCase();
-    if (n.includes('react') || n.includes('tailwind') || n.includes('vite')) {
-      return <Layers className="w-7 h-7 text-[#818cf8]" />;
-    }
-    if (n.includes('node') || n.includes('api') || n.includes('fastapi') || n.includes('python')) {
-      return <Terminal className="w-7 h-7 text-[#fb7185]" />;
-    }
-    if (n.includes('figma') || n.includes('prototype') || n.includes('wireframe')) {
-      return <PenTool className="w-7 h-7 text-[#c084fc]" />;
-    }
-    if (n.includes('ux') || n.includes('usability') || n.includes('heuristic') || n.includes('research')) {
-      return <Globe className="w-7 h-7 text-[#818cf8]" />;
-    }
-    if (n.includes('prompt') || n.includes('transformer') || n.includes('pytorch') || n.includes('shap')) {
-      return <Cpu className="w-7 h-7 text-[#c084fc]" />;
-    }
-    if (n.includes('sql') || n.includes('database') || n.includes('sas') || n.includes('viya')) {
-      return <Database className="w-7 h-7 text-[#fb7185]" />;
-    }
+    
+    // Product Engineering Icons
+    if (n.includes('react')) return <Atom className="w-7 h-7 text-[#818cf8]" />;
+    if (n.includes('vite')) return <Zap className="w-7 h-7 text-[#818cf8]" />;
+    if (n.includes('tailwind')) return <Wind className="w-7 h-7 text-[#818cf8]" />;
+    if (n.includes('node')) return <Cpu className="w-7 h-7 text-[#818cf8]" />;
+    if (n.includes('python') || n.includes('fastapi')) return <Binary className="w-7 h-7 text-[#818cf8]" />;
+    if (n.includes('api')) return <Link2 className="w-7 h-7 text-[#818cf8]" />;
+    if (n.includes('git')) return <GitBranch className="w-7 h-7 text-[#818cf8]" />;
+    if (n.includes('cloud') || n.includes('deploy')) return <Cloud className="w-7 h-7 text-[#818cf8]" />;
+    
+    // AI & Data Science Icons
+    if (n.includes('prompt')) return <MessageSquareCode className="w-7 h-7 text-[#c084fc]" />;
+    if (n.includes('transformer')) return <Network className="w-7 h-7 text-[#c084fc]" />;
+    if (n.includes('pytorch') || n.includes('learn')) return <Workflow className="w-7 h-7 text-[#c084fc]" />;
+    if (n.includes('shap') || n.includes('explain')) return <Eye className="w-7 h-7 text-[#c084fc]" />;
+    if (n.includes('sql') || n.includes('database')) return <Database className="w-7 h-7 text-[#c084fc]" />;
+    if (n.includes('sas') || n.includes('analytics')) return <BarChart3 className="w-7 h-7 text-[#c084fc]" />;
+    
+    // UX & Product Design Icons
+    if (n.includes('figma')) return <Figma className="w-7 h-7 text-[#fb7185]" />;
+    if (n.includes('prototyp')) return <Smartphone className="w-7 h-7 text-[#fb7185]" />;
+    if (n.includes('research') || n.includes('google')) return <Users className="w-7 h-7 text-[#fb7185]" />;
+    if (n.includes('testing') || n.includes('usability')) return <UserCheck className="w-7 h-7 text-[#fb7185]" />;
+    if (n.includes('architecture') || n.includes('information')) return <GitFork className="w-7 h-7 text-[#fb7185]" />;
+    if (n.includes('heuristic') || n.includes('evaluation')) return <CheckSquare className="w-7 h-7 text-[#fb7185]" />;
+    
     return <Sparkles className="w-7 h-7 text-[#c084fc]" />;
   };
 

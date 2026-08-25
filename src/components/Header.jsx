@@ -38,9 +38,9 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
         aria-label="Toggle navigation menu"
       >
         {isOpen ? (
-          <X className="w-5 h-5 text-gray-800 dark:text-gray-200 group-hover:text-[#ff4d8d] transition-colors" />
+          <X className="w-5 h-5 text-gray-800 dark:text-gray-200 group-hover:text-[#c084fc] transition-colors" />
         ) : (
-          <Menu className="w-5 h-5 text-gray-800 dark:text-gray-200 group-hover:text-[#ff4d8d] transition-colors" />
+          <Menu className="w-5 h-5 text-gray-800 dark:text-gray-200 group-hover:text-[#c084fc] transition-colors" />
         )}
       </button>
 

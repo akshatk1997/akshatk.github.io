@@ -42,17 +42,23 @@ export default function Experience() {
 
   const getImage = (title) => {
     const t = title.toLowerCase();
+    if (t.includes('franco') || t.includes('kernel')) {
+      return "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?q=80&w=600&auto=format&fit=crop";
+    }
     if (t.includes('blueflute') || t.includes('intern')) {
-      return "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=600&auto=format&fit=crop";
+      return "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop";
     }
     if (t.includes('qiplo') || t.includes('saas')) {
-      return "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop";
+      return "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop";
     }
     if (t.includes('chatbot') || t.includes('conversational')) {
-      return "https://images.unsplash.com/photo-1531747118685-ca8fa6e08806?q=80&w=600&auto=format&fit=crop";
+      return "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=600&auto=format&fit=crop";
     }
-    if (t.includes('mba') || t.includes('b.tech') || t.includes('graduated')) {
-      return "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop";
+    if (t.includes('mba')) {
+      return "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop";
+    }
+    if (t.includes('b.tech') || t.includes('graduated')) {
+      return "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600&auto=format&fit=crop";
     }
     return "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop";
   };

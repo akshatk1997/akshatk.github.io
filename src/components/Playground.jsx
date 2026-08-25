@@ -20,22 +20,22 @@ export default function Playground() {
   const tracks = [
     { 
       name: "Lo-Fi Focus Beats", 
-      url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+      url: "/audio/focus-1.mp3",
       genre: "Lo-Fi Study Beats"
     },
     { 
       name: "Deep Work Space Ambient", 
-      url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+      url: "/audio/focus-2.mp3",
       genre: "Atmospheric Synth Drone"
     },
     { 
       name: "Coffee Shop Piano Jazz", 
-      url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+      url: "/audio/focus-3.mp3",
       genre: "Chilled Focus Piano"
     },
     { 
       name: "Coding Productivity Synth", 
-      url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+      url: "/audio/focus-4.mp3",
       genre: "Synthwave Coding Beats"
     }
   ];
