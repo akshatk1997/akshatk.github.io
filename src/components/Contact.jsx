@@ -173,7 +173,7 @@ export default function Contact() {
             © 2026 akshat kumar. all rights reserved.
           </p>
 
-          <div className="text-center font-serif-display italic text-[11px] text-slate-400 dark:text-gray-500 tracking-wide max-w-md leading-relaxed pt-1.5 border-t border-zinc-200/50 dark:border-zinc-800/40 w-full">
+          <div className="text-center font-serif-display italic text-xs md:text-sm text-slate-650 dark:text-zinc-400 tracking-wide max-w-md leading-relaxed pt-3 border-t border-zinc-200/65 dark:border-zinc-800/85 w-full font-medium">
             "behind every line, there is a human heart waiting to connect."
           </div>
         </div>
