@@ -12,9 +12,9 @@ export const portfolioConfig = {
     resumeUrl: "#", // Add your resume link here
     stats: [
       { value: "2+", label: "Years of Experience" },
-      { value: "8+", label: "Completed Projects" },
-      { value: "15+", label: "A/B Tests & Studies" },
-      { value: "20+", label: "Technologies Mastered" }
+      { value: "5+", label: "Completed Projects" },
+      { value: "10+", label: "A/B Tests & Studies" },
+      { value: "14+", label: "Technologies Mastered" }
     ],
     services: [
       {
