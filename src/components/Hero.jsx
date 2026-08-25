@@ -63,7 +63,9 @@ export default function Hero() {
             </p>
             <h1 className="text-white text-5xl sm:text-7xl md:text-[96px] font-black leading-[0.95] tracking-tighter select-none max-w-4xl min-h-[160px] sm:min-h-[220px] md:min-h-[280px]">
               {displayText}
-              <span className="border-r-4 border-white animate-pulse ml-1">&nbsp;</span>
+              {displayText.length < fullText.length && (
+                <span className="border-r-4 border-white animate-pulse ml-1">&nbsp;</span>
+              )}
             </h1>
           </div>
 
