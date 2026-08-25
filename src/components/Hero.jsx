@@ -7,38 +7,17 @@ export default function Hero() {
 
   // Typing effect state hooks
   const [displayText, setDisplayText] = useState('');
-  const fullText = "Hi, I am Akshat Kumar.";
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(150);
+  const fullText = "Hi, I am Akshat Kumar";
+  const typingSpeed = 150;
 
   useEffect(() => {
-    let timer;
-    const handleType = () => {
-      if (!isDeleting) {
+    if (displayText.length < fullText.length) {
+      const timer = setTimeout(() => {
         setDisplayText(fullText.substring(0, displayText.length + 1));
-        setTypingSpeed(150);
-        
-        if (displayText === fullText) {
-          timer = setTimeout(() => {
-            setIsDeleting(true);
-          }, 2000);
-          return;
-        }
-      } else {
-        setDisplayText(fullText.substring(0, displayText.length - 1));
-        setTypingSpeed(75);
-        
-        if (displayText === '') {
-          setIsDeleting(false);
-        }
-      }
-    };
-
-    if (!timer) {
-      timer = setTimeout(handleType, typingSpeed);
+      }, typingSpeed);
+      return () => clearTimeout(timer);
     }
-    return () => clearTimeout(timer);
-  }, [displayText, isDeleting, typingSpeed]);
+  }, [displayText]);
 
   const getServiceIcon = (title) => {
     switch (title) {
