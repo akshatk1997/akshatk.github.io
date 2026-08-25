@@ -1,9 +1,44 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sparkles, Code, Layout } from 'lucide-react';
 import { portfolioConfig } from '../portfolio.config';
 
 export default function Hero() {
   const { profile } = portfolioConfig;
+
+  // Typing effect state hooks
+  const [displayText, setDisplayText] = useState('');
+  const fullText = "Hi, I am Akshat Kumar.";
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    let timer;
+    const handleType = () => {
+      if (!isDeleting) {
+        setDisplayText(fullText.substring(0, displayText.length + 1));
+        setTypingSpeed(150);
+        
+        if (displayText === fullText) {
+          timer = setTimeout(() => {
+            setIsDeleting(true);
+          }, 2000);
+          return;
+        }
+      } else {
+        setDisplayText(fullText.substring(0, displayText.length - 1));
+        setTypingSpeed(75);
+        
+        if (displayText === '') {
+          setIsDeleting(false);
+        }
+      }
+    };
+
+    if (!timer) {
+      timer = setTimeout(handleType, typingSpeed);
+    }
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, typingSpeed]);
 
   const getServiceIcon = (title) => {
     switch (title) {
@@ -47,8 +82,9 @@ export default function Hero() {
             <p className="text-white/95 text-base sm:text-lg font-mono font-bold tracking-wider mb-3 uppercase">
               {profile.title}
             </p>
-            <h1 className="text-white text-5xl sm:text-7xl md:text-[96px] font-black leading-[0.95] tracking-tighter select-none max-w-4xl">
-              Hi, I am <br className="hidden sm:inline" />{profile.name}
+            <h1 className="text-white text-5xl sm:text-7xl md:text-[96px] font-black leading-[0.95] tracking-tighter select-none max-w-4xl min-h-[160px] sm:min-h-[220px] md:min-h-[280px]">
+              {displayText}
+              <span className="border-r-4 border-white animate-pulse ml-1">&nbsp;</span>
             </h1>
           </div>
 
