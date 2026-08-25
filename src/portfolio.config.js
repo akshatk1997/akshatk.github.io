@@ -11,7 +11,7 @@ export const portfolioConfig = {
     email: "akshatk1997@gmail.com",
     resumeUrl: "#", // Add your resume link here
     stats: [
-      { value: "2+", label: "Years of Experience" },
+      { value: "1+", label: "Years of Experience" },
       { value: "5+", label: "Completed Projects" },
       { value: "10+", label: "A/B Tests & Studies" },
       { value: "14+", label: "Technologies Mastered" }
