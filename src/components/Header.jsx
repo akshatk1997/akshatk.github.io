@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { Menu, X, Sun, Moon, FileText } from 'lucide-react';
+import { Menu, X, Sun, Moon, FileText, Github, Linkedin, Mail } from 'lucide-react';
 import { portfolioConfig } from '../portfolio.config';
 import { scrollToSection } from '../utils/scroll';
-import * as Icons from 'lucide-react';
 
 export default function Header({ activeSection, setActiveSection, theme, toggleTheme }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +24,16 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
   };
 
   const renderIcon = (name) => {
-    const IconComponent = Icons[name];
-    return IconComponent ? <IconComponent size={20} /> : null;
+    switch (name) {
+      case "Github":
+        return <Github size={20} />;
+      case "Linkedin":
+        return <Linkedin size={20} />;
+      case "Mail":
+        return <Mail size={20} />;
+      default:
+        return null;
+    }
   };
 
   return (
