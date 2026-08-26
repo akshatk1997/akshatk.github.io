@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, FileText } from 'lucide-react';
 import { portfolioConfig } from '../portfolio.config';
 import { scrollToSection } from '../utils/scroll';
 import * as Icons from 'lucide-react';
@@ -102,6 +102,17 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
               </button>
             ))}
           </nav>
+
+          {/* Resume Download Option */}
+          <div className="pt-4 border-t border-gray-150 dark:border-gray-900/60 select-none">
+            <a
+              href={portfolioConfig.profile.resumeUrl}
+              download="Akshat_Kumar_Resume.pdf"
+              className="w-full py-3 px-5 rounded-2xl bg-gradient-to-r from-[#818cf8] via-[#c084fc] to-[#fb7185] hover:opacity-95 text-white font-bold text-xs tracking-wide transition-all duration-300 shadow-md shadow-[#c084fc]/15 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95"
+            >
+              <FileText size={14} /> Download Resume
+            </a>
+          </div>
         </div>
 
         {/* Footer / Social Badges */}

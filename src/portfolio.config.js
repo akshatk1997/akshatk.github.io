@@ -9,7 +9,7 @@ export const portfolioConfig = {
     status: "A soft glow starts in the dark",
     avatarPlaceholder: "✨", // Emoji or short symbol representing you
     email: "akshatk1997@gmail.com",
-    resumeUrl: "#", // Add your resume link here
+    resumeUrl: "/resume.pdf", // Add your resume link here
     stats: [
       { value: "1+", label: "Years of Experience" },
       { value: "5+", label: "Completed Projects" },
@@ -204,7 +204,6 @@ export const portfolioConfig = {
   socials: [
     { name: "GitHub", url: "https://github.com/akshatk1997", iconName: "Github" },
     { name: "LinkedIn", url: "https://www.linkedin.com/in/akshatk1997", iconName: "Linkedin" },
-    { name: "Twitter / X", url: "https://twitter.com", iconName: "Twitter" },
     { name: "E-mail", url: "mailto:akshatk1997@gmail.com", iconName: "Mail" }
   ]
 };
