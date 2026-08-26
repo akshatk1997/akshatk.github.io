@@ -120,11 +120,9 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
               <FileText size={14} /> Download Resume
             </a>
           </div>
-        </div>
 
-        {/* Footer / Social Badges */}
-        <div className="space-y-6 pt-6 border-t border-gray-200 dark:border-gray-900">
-          <div className="flex gap-4">
+          {/* Social Profiles under Resume Download */}
+          <div className="pt-4 border-t border-gray-200 dark:border-gray-900/60 select-none flex justify-center gap-4">
             {portfolioConfig.socials.map((social) => (
               <a
                 key={social.name}
@@ -138,7 +136,11 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
               </a>
             ))}
           </div>
-          <p className="text-[10px] font-mono text-gray-500 dark:text-gray-500">
+        </div>
+
+        {/* Footer / Copyright */}
+        <div className="pt-6 border-t border-gray-200 dark:border-gray-900 select-none">
+          <p className="text-[10px] font-mono text-gray-500 dark:text-gray-500 text-center">
             © {new Date().getFullYear()} {portfolioConfig.profile.name}
           </p>
         </div>
