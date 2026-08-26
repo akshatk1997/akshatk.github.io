@@ -7,7 +7,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hello! I am AK's ai, Akshat's digital representative. I'm here to tell you about his internships, Qiplo (his AI retention SaaS), or why he is a perfect match for your product team. What would you like to know?",
+      text: "Hello! I am AK's ai, Akshat's digital representative. I'm here to tell you about him. What would you like to know?",
       sender: 'bot',
       timestamp: new Date()
     }
