@@ -8,6 +8,7 @@ import Skills from './components/Skills';
 import Experience from './components/Experience';
 import Playground from './components/Playground';
 import Contact from './components/Contact';
+import Chatbot from './components/Chatbot';
 import { portfolioConfig } from './portfolio.config';
 import { Heart } from 'lucide-react';
 
@@ -160,6 +161,9 @@ export default function App() {
         <Playground />
         <Contact />
       </main>
+
+      {/* Floating Recruiter AI Agent */}
+      <Chatbot />
     </div>
   );
 }
