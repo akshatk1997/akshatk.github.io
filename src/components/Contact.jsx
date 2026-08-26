@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Check, Copy, Send, Heart } from 'lucide-react';
+import { Mail, Check, Copy, Send, Heart, Github, Linkedin } from 'lucide-react';
 import { portfolioConfig } from '../portfolio.config';
 
 export default function Contact() {
@@ -158,6 +158,24 @@ export default function Contact() {
       {/* Footer layout matching the Next.js visual specifications */}
       <footer className="footer bg-gradient-to-b from-[#eef2ff] to-[#f8fafc] dark:from-[#0b0f19] dark:to-[#05070c] transition-colors duration-300 border-none py-10 px-6">
         <div className="max-w-6xl mx-auto flex flex-col items-center justify-center gap-3 text-xs font-mono select-none">
+          {/* Social Badges Row */}
+          <div className="flex items-center gap-4 mb-2">
+            {portfolioConfig.socials.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 rounded-full bg-white dark:bg-zinc-900/60 text-slate-600 dark:text-zinc-400 hover:text-white hover:bg-[#c084fc] dark:hover:bg-[#c084fc] border border-zinc-200/60 dark:border-zinc-800/80 transition-all duration-300 hover:scale-105 shadow-sm flex items-center justify-center"
+                title={social.name}
+              >
+                {social.name === "GitHub" && <Github size={16} />}
+                {social.name === "LinkedIn" && <Linkedin size={16} />}
+                {social.name === "E-mail" && <Mail size={16} />}
+              </a>
+            ))}
+          </div>
+
           {/* Github link with logo placed upside */}
           <div className="flex items-center gap-2 text-slate-500 dark:text-gray-400">
             <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 496 512" className="w-4 h-4" xmlns="http://www.w3.org/2000/svg">
