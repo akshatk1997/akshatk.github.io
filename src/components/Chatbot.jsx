@@ -179,7 +179,7 @@ export default function Chatbot() {
                   AK's ai <Sparkles className="w-3.5 h-3.5 text-[#c084fc] animate-pulse" />
                 </h4>
                 <span className="text-[10px] text-zinc-500 dark:text-zinc-400 font-mono">
-                  Online · Recruiter Agent
+                  Online
                 </span>
               </div>
             </div>
