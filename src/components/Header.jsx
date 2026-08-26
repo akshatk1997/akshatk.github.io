@@ -61,7 +61,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
           {theme === 'dark' ? (
             <Sun className="w-5 h-5 text-amber-500 group-hover:text-amber-600 transition-colors animate-pulse" />
           ) : (
-            <Moon className="w-5 h-5 text-gray-650 group-hover:text-indigo-500 transition-colors" />
+            <Moon className="w-5 h-5 text-gray-600 group-hover:text-indigo-500 transition-colors" />
           )}
         </button>
       </div>
@@ -76,7 +76,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
 
       {/* Side Navigation Drawer */}
       <div 
-        className={`fixed top-0 left-0 bottom-0 w-80 max-w-[80vw] bg-white dark:bg-zinc-950 border-r border-gray-200/80 dark:border-gray-800/80 z-[58] p-8 md:p-10 flex flex-col justify-between transition-transform duration-500 shadow-2xl select-none ${
+        className={`fixed top-0 left-0 bottom-0 w-80 max-w-[80vw] bg-white dark:bg-zinc-950 border-r border-gray-200 dark:border-gray-800/80 z-[58] p-8 md:p-10 flex flex-col justify-between transition-transform duration-500 shadow-2xl select-none ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -99,7 +99,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
                 className={`w-full text-left py-2 font-sans font-bold text-base sm:text-lg transition-colors relative group select-none ${
                   activeSection === item.id 
                     ? 'text-[#c084fc]' 
-                    : 'text-gray-550 dark:text-gray-400 hover:text-[#c084fc] dark:hover:text-[#c084fc]'
+                    : 'text-gray-500 dark:text-gray-400 hover:text-[#c084fc] dark:hover:text-[#c084fc]'
                 }`}
               >
                 {item.label}
@@ -111,7 +111,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
           </nav>
 
           {/* Resume Download Option */}
-          <div className="pt-4 border-t border-gray-150 dark:border-gray-900/60 select-none">
+          <div className="pt-4 border-t border-gray-200 dark:border-gray-900/60 select-none">
             <a
               href={portfolioConfig.profile.resumeUrl}
               download="Akshat_Kumar_Resume.pdf"
@@ -123,7 +123,7 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
         </div>
 
         {/* Footer / Social Badges */}
-        <div className="space-y-6 pt-6 border-t border-gray-150 dark:border-gray-900">
+        <div className="space-y-6 pt-6 border-t border-gray-200 dark:border-gray-900">
           <div className="flex gap-4">
             {portfolioConfig.socials.map((social) => (
               <a
@@ -131,14 +131,14 @@ export default function Header({ activeSection, setActiveSection, theme, toggleT
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 rounded-full bg-gray-105 dark:bg-zinc-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-[#c084fc] dark:hover:bg-[#c084fc] transition-all duration-300 hover:scale-105"
+                className="p-2.5 rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-gray-400 hover:text-white hover:bg-[#c084fc] dark:hover:bg-[#c084fc] transition-all duration-300 hover:scale-105"
                 title={social.name}
               >
                 {renderIcon(social.iconName)}
               </a>
             ))}
           </div>
-          <p className="text-[10px] font-mono text-gray-450 dark:text-gray-500">
+          <p className="text-[10px] font-mono text-gray-500 dark:text-gray-500">
             © {new Date().getFullYear()} {portfolioConfig.profile.name}
           </p>
         </div>
